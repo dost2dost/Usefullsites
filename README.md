@@ -3,3 +3,9 @@ https://github.com/TechPrimers/spring-security-db-example   //authorization and 
 https://prezi.com/p/create-prezi/                           // FOR PPT
 
 https://github.com/bogus/Java-Spring-Examples               // spring with jpa
+http://www.java2s.com/                                      //java basic
+
+
+
+
+https://www.programcreek.com/java-api-examples/index.php?source_dir=spring-social-samples-master/spring-social-showcase-sec/src/main/java/org/springframework/social/showcase/config/SecurityConfig.java#
