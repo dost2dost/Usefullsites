@@ -13,6 +13,8 @@ https://way2java.com/
 
 https://www.codecademy.com/
 
+https://www.lucidchart.com/pages/uml-class-diagram          //uml diagram
+
 
 
 
