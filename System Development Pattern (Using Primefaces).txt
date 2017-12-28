@@ -1,0 +1,612 @@
+// Show image on Jasper REport
+
+<image onErrorType="Blank">
+				<reportElement x="3" y="-6" width="116" height="55" uuid="e57d4858-fbc8-4b1b-b8b8-66cb71ef2505"/>
+				<imageExpression><![CDATA["aplogo.png"]]></imageExpression>
+</image>
+
+// Remove the column from the export excel sheet 
+
+exportable="false" 
+
+
+// only tab key allowed
+
+onkeydown="return onlyTab(event)"
+
+  
+                        function onlyTab(event) {
+                            var key = window.event ? event.keyCode : event.which;
+
+                            if (key ==  9) {
+                            return true;
+                            }
+                            else
+                            return false;
+                        }
+                        
+
+// -------------------------------------------------
+
+
+//set property value to targeted bean
+<h:commandButton action="#{user.editAction}" >
+    <f:setPropertyActionListener target="#{user.action}" value="delete" />
+</h:commandButton>
+
+//  Validation For Caps All Characters
+
+
+<script type="text/JavaScript">
+
+
+ function valid(f) {
+
+
+              !/^[A-z]*$/.test(f.value)?f.value = f.value.replace(/[^A-z]/g,''):null;
+              } 
+ 
+
+
+
+</script>
+
+
+
+onkeyup="valid(this)" 
+
+
+#{facty_frm_it.sfr_id!=null? facty_frm_it.sfr_id : facty_frm_it.swstring}
+//
+RequestContext.getCurrentInstance().execute("PF('UpdateSystem').show();");
+RequestContext.getCurrentInstance().execute("PF('UpdateSystemError').show();");
+
+//  
+
+unitOfMeasurementform2:dtable_id2 
+
+
+
+//remotCall
+
+ <p:remoteCommand autoRun="true" update="unitOfMeasurementform2 unitOfMeasurementform popUpForm3 " action="#{unitofMeasurement.remoteCallPL()}"/>
+
+//general Method for interface
+constructor(empty)
+remoteCallPL()
+generateDT()
+addRecord()
+updateRecord()
+resetValues()
+
+
+//return class and method name
+this.getClass().getName()+":"+new Object(){}.getClass().getEnclosingMethod().getName()
+
+
+// Get date
+
+ public String gettDate() {
+
+        Date date = new Date();
+        SimpleDateFormat dt1 = new SimpleDateFormat("YYYY");
+        String aa = dt1.format(date);
+        return aa;
+    }
+
+
+
+// Error Email in catch body
+
+EmailUtility.emailSending(conobj.errorEmailList, null, conobj.systemEmailFrom, "Error: "+locationTriger, sql);
+            
+
+
+// for single code handling
+
+variable.replaceAll("'", "''")
+
+/// Number Validation
+
+onkeypress='return validateNumber(event)'
+
+ <script type="text/javascript">
+                 function validateNumber(event) {
+                            var key = window.event ? event.keyCode : event.which;
+
+                            if (event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 37 || event.keyCode == 39) {
+                            return true;
+                            }
+                           else if (key &lt;  48 || key &gt;  57) {
+                            return false;
+                            }
+                            else
+                            return true;
+                        }
+    </script>
+
+
+
+///INLINE XHTML IF CONDITION
+
+style="#{tb.req_status=='ACKNOWLEDGE'? '':'display:none'};margin-left: 40px"
+
+//(simple form with validation)
+
+
+<p:messages autoUpdate="true"  closable="true"/>
+<p:tab title="Add System">
+<h:form>
+<h:panelGrid columns="3" cellpadding="10" id="systemGrid">
+<p:outputLabel value="  System Name"/>
+<p:inputText id="ssr_name" value="#{systemSetup.ssr_name}" required="true" requiredMessage="Please Enter System Name" size="40"/>
+//<p:message for="ssr_name" />
+<p:outputLabel value="* System Description"/>
+<p:inputText value="#{systemSetup.ssr_desc}" size="40" maxlength="50"/>
+<p:outputLabel value="* Optional"/>
+<p:commandButton value="Add" action="#{systemSetup.addSystem()}" update="systemGrid"/>
+</h:panelGrid>
+</h:form>
+</p:tab>
+
+
+
+//(complex form validation (bean level))
+
+FacesMessage m = new FacesMessage("","Please Enter Remarks  min 10 character....");
+RequestContext.getCurrentInstance().showMessageInDialog(m);
+
+
+
+//(auto - enable ,disable)
+
+<script>
+function disableOnSubmit(input) {
+setTimeout('disableAfterTimeout(\'' + input.id + '\');', 0);
+setTimeout('enableAfterTimeout(\'' + input.id + '\');', 8000);
+}
+function disableAfterTimeout(id) {
+var toDisable = document.getElementById( id );
+toDisable.disabled = 'disabled';
+
+}
+function enableAfterTimeout(id) {
+var toDisable = document.getElementById( id );
+toDisable.disabled = false;
+}
+</script> 
+
+
+--calling
+<p:commandButton  style="#{v.disp_ack}" value="View" action="#{HW_UserDao.call_Main(v)}" onclick="disableOnSubmit(this);" />
+
+
+-- date time at form level (.xhtml)
+
+<p:inputText id="reqdate" value="#{currentDate}" size="25"  readonly="true">
+<f:convertDateTime pattern="dd-MM-yyyy h:mm:ss a" type="date" />
+</p:inputText>
+
+
+
+
+-- calender
+<p:outputLabel value="End Date"></p:outputLabel><br/>
+<p:calendar id="startdate" readonlyInput="true" mindate="#{req_Assignment.assignmentScreenReqDate}" value="#{request_task.taskEndDate}"  pattern="dd-mm-yyyy hh:mm:ss a" /> 
+
+--bean level
+
+String timeStamp = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a").format(Calendar.getInstance().getTime());
+SimpleDateFormat dateFormate = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss a");
+
+
+at insert level (insert into table value(dateFormate.format(taskEndDate));)  (calendar values only)
+
+database level timestamp (SELECT TO_CHAR(SYSDATE, 'dd-MON-YYYY HH12:MI:SS AM')  FROM DUAL)
+
+private Date taskEndDate;
+public Date getTaskEndDate() {
+return taskEndDate;
+}
+
+public void setTaskEndDate(Date taskEndDate) {
+this.taskEndDate = taskEndDate;
+}
+
+
+-- for max auto increment id (while insertion)
+INSERT INTO SSR_SYSTEM_FACILITY_HIST
+values(0,(select max(nvl(sf.endorse_no,0))+1 from ssr_system_facility_hist sf WHERE SFR_ID='" + getSfr_id() + "'),9,(SELECT TO_CHAR(SYSDATE, 'dd-MON-YYYY HH12:MI:SS AM')  FROM DUAL),'" + usrName + "',(SELECT TO_CHAR(SYSDATE, 'dd-MON-YYYY HH12:MI:SS AM')  FROM DUAL),'" + remarks + "','" + getSfr_id() + "')";";
+
+
+-- class creation scope
+
+package  ................
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+
+@ManagedBean(name = "nameAbc") (camal casing)
+@SessionScoped
+
+class nameAbc{         
+}
+
+
+-- Drop Down Fill Up with Data base table
+-- (.xhtml)
+
+<p:selectOneMenu id="repFrm" value="#{cmsReportDao.repRequiredFrom}"  >
+<f:selectItems value="#{cmsReportDao.favRepRequiredValue}"/>
+</p:selectOneMenu>
+
+-- (java bean )
+
+class abc{
+
+
+public abc(){
+fill(); //   
+}
+
+private String repRequiredFrom;
+private static Map<String, Object> repRequiredValue;
+public Map<String, Object> getFavRepRequiredValue() {
+return repRequiredValue;
+}
+public String getRepRequiredFrom() {
+return repRequiredFrom;
+}
+public void setRepRequiredFrom(String repRequiredFrom) {
+this.repRequiredFrom = repRequiredFrom;
+}
+
+public Map fill() {
+
+System.out.println("Call");
+repRequiredValue = new LinkedHashMap<String, Object>();
+repRequiredValue.put("All", "All");
+try {
+dbc = new DBconnect();
+st = dbc.getConnection(false).createStatement();
+
+String sql = "select S.DESCRIPTION value,S.DESCRIPTION label from CS_SETUP S where S.COLUMN_NAME='reply_from' order by value  ";
+System.out.println("SQl" + sql);
+rs = st.executeQuery(sql);
+while (rs.next()) {
+repRequiredValue.put(rs.getString("value"), rs.getString("label"));
+}
+
+} catch (Exception e) {
+} finally {
+try {
+dbc.freeConnection();
+st.close();
+} catch (SQLException ex) {
+System.out.println("Exception while closing connection in logout " + ex.getMessage());
+}
+}
+return repRequiredValue;
+}
+}
+
+
+
+-- Data Table class
+
+public class dataList {
+
+    private int serialNo;
+    private String firstVar;
+    private String secondndVar;
+    private String thirdVar;
+    private String fourthVar;
+    private String fifthVar;
+    private String sixthVar;
+    private String seventhVar;
+    private String eightVar;
+    private String ninthVar;
+    private String tengthVar;
+    private boolean firstboolean;
+    private boolean secondboolean;
+
+    public dataList(int serialNo, String firstVar, String secondndVar, String thirdVar, String fourthVar, String fifthVar, String sixthVar, String seventhVar, String eightVar, String ninthVar, String tengthVar, boolean firstboolean, boolean secondboolean) {
+        this.serialNo = serialNo;
+        this.firstVar = firstVar;
+        this.secondndVar = secondndVar;
+        this.thirdVar = thirdVar;
+        this.fourthVar = fourthVar;
+        this.fifthVar = fifthVar;
+        this.sixthVar = sixthVar;
+        this.seventhVar = seventhVar;
+        this.eightVar = eightVar;
+        this.ninthVar = ninthVar;
+        this.tengthVar = tengthVar;
+        this.firstboolean = firstboolean;
+        this.secondboolean = secondboolean;
+    }
+
+    public int getSerialNo() {
+        return serialNo;
+    }
+
+    public void setSerialNo(int serialNo) {
+        this.serialNo = serialNo;
+    }
+
+    public boolean isFirstboolean() {
+        return firstboolean;
+    }
+
+    public void setFirstboolean(boolean firstboolean) {
+        this.firstboolean = firstboolean;
+    }
+
+    public boolean isSecondboolean() {
+        return secondboolean;
+    }
+
+    public void setSecondboolean(boolean secondboolean) {
+        this.secondboolean = secondboolean;
+    }
+
+    public String getFirstVar() {
+        return firstVar;
+    }
+
+    public void setFirstVar(String firstVar) {
+        this.firstVar = firstVar;
+    }
+
+    public String getSecondndVar() {
+        return secondndVar;
+    }
+
+    public void setSecondndVar(String secondndVar) {
+        this.secondndVar = secondndVar;
+    }
+
+    public String getThirdVar() {
+        return thirdVar;
+    }
+
+    public void setThirdVar(String thirdVar) {
+        this.thirdVar = thirdVar;
+    }
+
+    public String getFourthVar() {
+        return fourthVar;
+    }
+
+    public void setFourthVar(String fourthVar) {
+        this.fourthVar = fourthVar;
+    }
+
+    public String getFifthVar() {
+        return fifthVar;
+    }
+
+    public void setFifthVar(String fifthVar) {
+        this.fifthVar = fifthVar;
+    }
+
+    public String getSixthVar() {
+        return sixthVar;
+    }
+
+    public void setSixthVar(String sixthVar) {
+        this.sixthVar = sixthVar;
+    }
+
+    public String getSeventhVar() {
+        return seventhVar;
+    }
+
+    public void setSeventhVar(String seventhVar) {
+        this.seventhVar = seventhVar;
+    }
+
+    public String getEightVar() {
+        return eightVar;
+    }
+
+    public void setEightVar(String eightVar) {
+        this.eightVar = eightVar;
+    }
+
+    public String getNinthVar() {
+        return ninthVar;
+    }
+
+    public void setNinthVar(String ninthVar) {
+        this.ninthVar = ninthVar;
+    }
+
+    public String getTengthVar() {
+        return tengthVar;
+    }
+
+    public void setTengthVar(String tengthVar) {
+        this.tengthVar = tengthVar;
+    }
+}
+-- fill data table
+
+
+class xyz {
+private ArrayList<dataList> reqList=new ArrayList<dataList>();
+    
+public ArrayList<dataList> getReqList() {
+        return reqList;
+    }
+public void setReqList(ArrayList<dataList> reqList) {
+        this.reqList = reqList;
+    }
+
+public ArrayList<dataList> genReqList(){
+try {
+reqList.clear();
+
+
+String sql="SELECT to_char(f.req_date ,'DD-Mon-YYYY HH:MI:SS AM') req_date,R.SFR_ID,f.network_id,f.req_by,f.emp_id,(SELECT STATUS_DESC FROM ssr_facility_status where facility_status=f.STATUS_CODE)Status_description FROM ssr_hw_system_facility f ,SSR_HW_NEW_EMP_REQ R WHERE F.SSR_FACILITY_REQUEST_ID=R.HW_REQ_ID AND F.STATUS_CODE <>12 and f.emp_id="+emp_code;
+dbc = new DbConnection();
+st = dbc.getConnection(true).createStatement();
+rs = st.executeQuery(sql);
+String date,req_id,req_by,net_id,emp_code,reqStatus,disp_ack;
+int i=1;
+while (rs.next()){
+date=rs.getString(1);
+req_id=rs.getString(2);
+net_id=rs.getString(3);
+req_by=rs.getString(4);
+emp_code=rs.getString(5);
+reqStatus=rs.getString(6);
+if(reqStatus.equalsIgnoreCase("HW ACKNOWLEDGE"))
+{
+disp_ack=""; 
+}
+else
+{
+disp_ack="display: none";
+}
+reqList.add(new dataList(i,date,req_id,net_id,req_by,emp_code,reqStatus,disp_ack));
+i++;
+}
+
+} catch (Exception e) {
+e.printStackTrace();
+} finally {
+try {
+rs.close();
+st.close();
+dbc.freeConnection();
+} catch (Exception e) {
+e.printStackTrace();
+}
+}
+
+return reqList;
+}
+public callFunction(dataList d)
+{
+d.getFirstVar();
+}
+}
+
+
+
+--  .xhtml (Data List)
+
+<p:dataTable value="#{xyz.reqList}" var="v" paginator="true" rows="10" sortOrder="descending">
+<p:column headerText="Sno:" sortBy="#{v.sno}">
+#{v.sno}
+</p:column>
+<p:column headerText="Req-Date" sortBy="#{v.req_date}">
+#{v.req_date}
+</p:column>
+<p:column headerText="SFR-ID" sortBy="#{v.req_id}">
+#{v.req_id}
+</p:column>
+<p:column headerText="Net-ID">
+#{v.net_id}
+</p:column>
+<p:column headerText="Req-By">
+#{v.req_by}
+</p:column>
+<p:column headerText="Req-Status">
+#{v.reqStatus}
+</p:column>
+<p:column headerText="View Request">
+<p:commandButton  style="#{v.disp_ack}" value="View" action="#{xyz.callFunction(v)}"/>
+</p:column>
+</p:dataTable>
+
+
+-- Dialog Box after insert ,Delete , Update like event
+
+
+-- (.xhtml)
+
+<p:dialog header="Message" widgetVar="AddSystem" minHeight="80" resizable="false" closable="false" modal="true">
+<h:outputText value=" Record Save Successfull " style="color:green" /><br/><br/>
+<div align="center"><p:commandButton ajax="true" value="OK" oncomplete="AddSystem.hide()" action="#{redirect()}"  /></div> 
+</p:dialog>
+
+
+-- java bean
+import org.primefaces.context.RequestContext;   (1st import)
+
+if(insert successfull){
+RequestContext context = RequestContext.getCurrentInstance();
+context.execute("PF('AddSystem').show();");
+}
+
+
+public String redirect()
+{
+return "search_request.xhtml?faces-redirect=true";
+}
+
+
+-- confirm dialog  (.xhtml)
+
+<p:confirmDialog id="cnfdlg_1" showEffect="fade" hideEffect="explode" widgetVar="dlgcnf" message="Do you want Process without Software-Section" header="SW-Not-Selected">
+<p:commandButton    value="Yes"  styleClass="ui-confirmdialog-yes" icon="ui-icon-check" action="#{hw_newEmp.saveWithoutSoft()}" onclick="PF('dlgcnf').hide();" update="@form"/>
+<p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" onclick="PF('dlgcnf').hide();" />
+</p:confirmDialog>
+
+--Java bean 
+RequestContext.getCurrentInstance().execute("PF('dlgcnf').show();");
+
+
+-- Remote Command
+
+<p:dataTable  styleClass="textStyle" paginator="true" id="assignmentTable" > </p:dataTable>
+
+<p:remoteCommand name="AutoRunMethod" action="#{req_Assignment.redirectUrlAssignment()}" update="assignmentTable" autoRun="true" />
+
+
+-- bean
+
+public void redirectUrlAssignment()
+{
+call_function();
+}
+
+//compareable
+public class Country implements Comparable{
+       @Override
+    public int compareTo(Object arg0) {
+        Country country=(Country) arg0;
+        return (this.countryId < country.countryId ) ? -1: (this.countryId > country.countryId ) ? 1:0 ;
+}}
+//compare able
+public class CountrySortByIdComparator implements Comparator<Country>{
+
+    @Override
+    public int compare(Country country1, Country country2) {
+
+        return (country1.getCountryId() < country2.getCountryId() ) ? -1: (country1.getCountryId() > country2.getCountryId() ) ? 1:0 ;
+    }
+
+}
+
+============================================ DataBase Table ======================================
+
+varchar2(50); e.g name, description........
+varchar2(200); e.g Comments ,Remarks........
+integer(7);
+Date(TimeStamp);
+
+
+
+
+
+
+
+
+
+
+
+
+
