@@ -21,6 +21,8 @@ https://www.versionone.com/agile-101/what-is-scrum/         //Scrum
 
 https://github.com/Chalarangelo/30-seconds-of-code          //javascript
 
+https://tree.taiga.io/project/dost-transmittal/backlog      //Scrum
+
 
 
 
