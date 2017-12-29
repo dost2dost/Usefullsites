@@ -19,6 +19,8 @@ https://creately.com/app/?tempID=h165rwt81&login_type=demo#
 
 https://www.versionone.com/agile-101/what-is-scrum/         //Scrum
 
+https://github.com/Chalarangelo/30-seconds-of-code          //javascript
+
 
 
 
