@@ -19,6 +19,8 @@ https://www.lucidchart.com/pages/uml-class-diagram          //uml class diagram
 
 https://www.uml-diagrams.org/index-examples.html            //uml directory
 
+https://www.smartdraw.com/class-diagram/                    //uml Tutorial
+
 https://creately.com/app/?tempID=h165rwt81&login_type=demo# 
 
 https://www.versionone.com/agile-101/what-is-scrum/         //Scrum
