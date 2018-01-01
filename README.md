@@ -21,6 +21,8 @@ https://www.uml-diagrams.org/index-examples.html            //uml directory
 
 https://www.smartdraw.com/class-diagram/                    //uml Tutorial
 
+https://cloud.smartdraw.com/                                //uml cloud practice
+
 https://creately.com/app/?tempID=h165rwt81&login_type=demo# 
 
 https://www.versionone.com/agile-101/what-is-scrum/         //Scrum
