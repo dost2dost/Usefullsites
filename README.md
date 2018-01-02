@@ -31,6 +31,8 @@ https://github.com/Chalarangelo/30-seconds-of-code          //javascript
 
 https://tree.taiga.io/project/dost-transmittal/backlog      //Scrum
 
+https://www.jdoodle.com/online-mongodb-terminal             //mongo db on line practice
+
 
 
 
