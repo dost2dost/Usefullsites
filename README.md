@@ -33,6 +33,8 @@ https://tree.taiga.io/project/dost-transmittal/backlog      //Scrum
 
 https://www.jdoodle.com/online-mongodb-terminal             //mongo db on line practice
 
+http://www.pythonforbeginners.com/basics/python-quick-guide   //python guide 
+
 
 
 
