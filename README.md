@@ -37,9 +37,13 @@ http://www.pythonforbeginners.com/basics/python-quick-guide   //python guide
 
 https://github.com/michelrisucci/spring-jsf-jpa-quickstart    //jsf-jpa-spring-quice
 
-https://javabeat.net/jsf-2/                                   //jsf-guide    
+https://javabeat.net/jsf-2/                                   //jsf-guide  
+
+https://www.ampower.me/article/Java/JSF-2-2-Spring4-integration-example-using-spring-annotations-82-465989
 
 https://github.com/joinfaces/joinfaces-maven-jar-example      //joinfaces ie jsf with springboot
+
+
 
 
 
