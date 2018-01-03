@@ -45,6 +45,8 @@ https://www.ampower.me/article/Java/JSF-2-2-Spring4-integration-example-using-sp
 
 https://github.com/joinfaces/joinfaces-maven-jar-example      //joinfaces ie jsf with springboot
 
+http://www.mkyong.com/java8/java-8-lambda-comparator-example/   // java 8 lamda expressions
+
 
 
 
