@@ -35,6 +35,8 @@ https://www.jdoodle.com/online-mongodb-terminal             //mongo db on line p
 
 http://www.pythonforbeginners.com/basics/python-quick-guide   //python guide 
 
+https://github.com/michelrisucci/spring-jsf-jpa-quickstart    //jsf-jpa-spring-quice
+
 
 
 
