@@ -37,7 +37,9 @@ http://www.pythonforbeginners.com/basics/python-quick-guide   //python guide
 
 https://github.com/michelrisucci/spring-jsf-jpa-quickstart    //jsf-jpa-spring-quice
 
-https://javabeat.net/jsf-2/                                   //jsf-guide  
+https://javabeat.net/jsf-2/                                   //jsf-guide
+
+https://www.concretepage.com/spring-4/spring-4-jsf-2-integration-example-using-autowired-annotation
 
 https://www.ampower.me/article/Java/JSF-2-2-Spring4-integration-example-using-spring-annotations-82-465989
 
