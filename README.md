@@ -55,6 +55,8 @@ http://www.onlinetutorialspoint.com/spring/spring-mvc-helloworld.html   // on li
 
 http://www.vogella.com/tutorials/SpringJDBC/article.html                //vogla java href
 
+http://o7planning.org/en/10305/simple-login-java-web-application-using-spring-mvc-spring-security-and-spring-jdbc   // spring mvc login app
+
 
 
 
