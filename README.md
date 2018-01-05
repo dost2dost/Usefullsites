@@ -5,6 +5,8 @@ https://prezi.com/p/create-prezi/                           // FOR PPT
 
 https://github.com/bogus/Java-Spring-Examples               // spring with jpa
 
+http://www.codejava.net/frameworks/spring/spring-mvc-with-jdbctemplate-example  
+
 http://www.java2s.com/                                      //java basic
 
 https://github.com/in28minutes/SpringIn28Minutes            //in28minuts
@@ -56,6 +58,7 @@ http://www.onlinetutorialspoint.com/spring/spring-mvc-helloworld.html   // on li
 http://www.vogella.com/tutorials/SpringJDBC/article.html                //vogla java href
 
 http://o7planning.org/en/10305/simple-login-java-web-application-using-spring-mvc-spring-security-and-spring-jdbc   // spring mvc login app
+
 
 
 
