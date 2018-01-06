@@ -66,3 +66,5 @@ http://o7planning.org/en/10305/simple-login-java-web-application-using-spring-mv
 
 
 https://www.programcreek.com/java-api-examples/index.php?source_dir=spring-social-samples-master/spring-social-showcase-sec/src/main/java/org/springframework/social/showcase/config/SecurityConfig.java#
+
+https://github.com/git-tips/tips                             //github tips                                                                                       
