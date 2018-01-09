@@ -49,6 +49,8 @@ https://github.com/joinfaces/joinfaces-maven-jar-example      //joinfaces ie jsf
 
 http://www.mkyong.com/java8/java-8-lambda-comparator-example/   // java 8 lamda expressions
 
+http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html //java8
+
 https://mdbootstrap.com/material-design-for-bootstrap/          //Material Design Bootstrap
 
 https://sites.google.com/site/springmvcnetbeans/step-by-step/     //netbeans spring mvc stepbystep
