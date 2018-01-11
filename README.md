@@ -70,4 +70,6 @@ https://online2pdf.com/       //PDF on line converter
 
 https://www.programcreek.com/java-api-examples/index.php?source_dir=spring-social-samples-master/spring-social-showcase-sec/src/main/java/org/springframework/social/showcase/config/SecurityConfig.java#
 
-https://github.com/git-tips/tips                             //github tips                                                                                       
+https://github.com/git-tips/tips                             //github tips      
+
+https://github.com/kdn251/interviews                          //interview questions
