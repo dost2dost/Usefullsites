@@ -80,3 +80,5 @@ https://console.developers.google.com/cloud-resource-manager                    
 
 https://docs.moodle.org/31/en/Roles_FAQ    /// moodle fAQ
 
+https://moodle.org/mod/forum/view.php?id=6826   ///
+
