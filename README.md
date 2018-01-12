@@ -78,3 +78,5 @@ https://edu.google.com/openonline/course-builder/docs/1.11/set-up-course-builder
 
 https://console.developers.google.com/cloud-resource-manager                                      //Google developer Consol
 
+https://docs.moodle.org/31/en/Roles_FAQ    /// moodle fAQ
+
