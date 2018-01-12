@@ -75,3 +75,6 @@ https://github.com/git-tips/tips                             //github tips
 https://github.com/kdn251/interviews                          //interview questions
 https://edu.google.com/openonline/course-builder/docs/1.10/set-up-course-builder/check-for-python.html    //google on line education +python
 https://edu.google.com/openonline/course-builder/docs/1.11/set-up-course-builder/set-up-course-builder.html 
+
+https://console.developers.google.com/cloud-resource-manager                                      //Google developer Consol
+
