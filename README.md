@@ -82,3 +82,5 @@ https://docs.moodle.org/31/en/Roles_FAQ    /// moodle fAQ
 
 https://moodle.org/mod/forum/view.php?id=6826   ///
 
+9900783' AND '1' ='1' or '1' ='1                ///sql injection
+
