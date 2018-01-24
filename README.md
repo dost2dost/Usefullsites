@@ -86,3 +86,5 @@ https://moodle.org/mod/forum/view.php?id=6826   ///
 
 9900783' AND '1' ='1' or '1' ='1                ///sql injection
 
+https://www.journaldev.com/2954/hibernate-query-language-hql-example-tutorial    //hibernate
+
