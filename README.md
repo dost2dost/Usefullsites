@@ -84,6 +84,8 @@ https://docs.moodle.org/31/en/Roles_FAQ    /// moodle fAQ
 
 https://moodle.org/mod/forum/view.php?id=6826   ///
 
+https://dzone.com/refcardz/getting-started-play-framework          //dzone play frame guide step by step
+
 9900783' AND '1' ='1' or '1' ='1                ///sql injection
 
 https://www.journaldev.com/2954/hibernate-query-language-hql-example-tutorial    //hibernate
