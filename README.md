@@ -90,3 +90,4 @@ https://dzone.com/refcardz/getting-started-play-framework          //dzone play 
 
 https://www.journaldev.com/2954/hibernate-query-language-hql-example-tutorial    //hibernate
 
+https://developers.google.com/maps/documentation/distance-matrix/intro            //google api 
