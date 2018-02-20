@@ -598,6 +598,8 @@ varchar2(200); e.g Comments ,Remarks........
 integer(7);
 Date(TimeStamp);
 
+https://www.javatips.net/api/jgraphx-master/examples/com/mxgraph/examples/swing/GraphEditor.java    //javatips
+
 
 
 
