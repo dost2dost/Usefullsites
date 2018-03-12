@@ -1,0 +1,3 @@
+
+libraryDependencies += "com.aspose" % "aspose-cells" % "18.2"
+resolvers += "AsposeJavaAPI" at "http://maven.aspose.com/repository/simple/ext-release-local/"
