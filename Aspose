@@ -1,3 +1,59 @@
 
 libraryDependencies += "com.aspose" % "aspose-cells" % "18.2"
+
 resolvers += "AsposeJavaAPI" at "http://maven.aspose.com/repository/simple/ext-release-local/"
+
+//iterate rows in aspose
+
+//Access the Maximum Display Range
+Range range = worksheet.getCells().getMaxDisplayRange();
+int tcols = range.getColumnCount();
+int trows = range.getRowCount();
+
+System.out.println("Total Rows:" + trows);
+System.out.println("Total Cols:" + tcols);
+
+RowCollection rows = cells.getRows();
+		
+for (int i = 0 ; i < rows.getCount() ; i++)
+{
+	for (int j = 0 ; j < tcols ; j++)
+	{
+		System.out.print(cells.get(i,j).getName() + " - " + cells.get(i,j).getValue() + "\t");
+	}
+	System.out.println("");
+}
+
+
+////////////////////
+
+
+// The path to the documents directory.
+		String dataDir = Utils.getSharedDataDir(AccessingWorksheetsusingSheetName.class) + "Worksheets/";
+		String filePath = dataDir + "book1.xlsx";
+
+		// Creating a file stream containing the Excel file to be opened
+		FileInputStream fstream = new FileInputStream(filePath);
+
+		// Instantiating a Workbook object with the stream
+		Workbook workbook = new Workbook(fstream);
+
+		// Accessing a worksheet using its sheet name
+		Worksheet worksheet = workbook.getWorksheets().get("Sheet1");
+		Cell cell = worksheet.getCells().get(0, 0);
+
+		// Print Message
+		System.out.println(cell.getValue());
+/////////////////////////////////
+
+Workbook wb = new Workbook();
+wb.Open("f:\test\MyExcelFile.xls");
+Worksheet ws = wb.Worksheets[0];
+int trows = ws.Cells.MaxDataRow;
+int tcols = ws.Cells.MaxDataColumn;
+DataTable dt = ws.Cells.ExportDataTable(0, 0,trows, tcols, true);
+
+
+
+
+
