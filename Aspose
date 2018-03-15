@@ -84,6 +84,20 @@ public class AccessingWorksheetsusingSheetName {
 		System.out.println(cell.getValue());
 	}
 }
+///////////////
+
+Sample code:
+Workbook workbook = new Workbook();
+workbook.Open("f:\test\Book1.xls");
+Worksheet sheet = workbook.Worksheets["Sheet1"];
+Cells cells = sheet.Cells;
+int maxrow = cells.MaxDataRowInColumn(CellsHelper.ColumnNameToIndex("S"));
+string val1;
+for (int i = 0; i <= maxrow; i++)
+{
+val1 = cells[i, CellsHelper.ColumnNameToIndex("S")].StringValue;
+}
+workbook.Save("f:\test\outBook1.xls");
 
 
 
