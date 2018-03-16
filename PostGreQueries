@@ -2,3 +2,4 @@ select nspname from pg_catalog.pg_namespace;                                    
 
 select column_name from information_schema.columns where table_name = 'sitemaster';   //show all column names
 
+ALTER TABLE enmt3_truf_vendor_tim_kurtz ALTER COLUMN vendor_provided_longitude_in_decimals  TYPE text USING (id::text); //Alter table Column
