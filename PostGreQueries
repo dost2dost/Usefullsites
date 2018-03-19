@@ -1,3 +1,6 @@
+http://www.postgresqltutorial.com/postgresql-add-column/
+
+
 select nspname from pg_catalog.pg_namespace;                                          //Shows all schemas
 
 select column_name from information_schema.columns where table_name = 'sitemaster';   //show all column names
