@@ -99,6 +99,171 @@ val1 = cells[i, CellsHelper.ColumnNameToIndex("S")].StringValue;
 }
 workbook.Save("f:\test\outBook1.xls");
 
+// using Formula
+// For complete examples and data files, please go to https://github.com/aspose-cells/Aspose.Cells-for-.NET
+// The path to the documents directory.
+string dataDir = RunExamples.GetDataDir(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+// Creating a file stream containing the Excel file to be opened
+FileStream fstream = new FileStream(dataDir + "book1.xls", FileMode.Open);
+
+// Opening the Excel file through the file stream
+Workbook workbook = new Workbook(fstream);
+
+// Accessing the first worksheet in the Excel file
+Worksheet worksheet = workbook.Worksheets[0];
+
+// Finding the cell containing the specified formula
+Cell cell = worksheet.Cells.FindFormula("=SUM(A5:A10)", null);
+
+// Printing the name of the cell found after searching worksheet
+System.Console.WriteLine("Name of the cell containing formula: " + cell.Name);
+
+// Closing the file stream to free all resources
+fstream.Close();
+////////////////
+Finding Cells Containing a Formula
+Developers can find a specified formula in the worksheet by calling the Cells collection's FindFormula method. Typically, the FindFormula method accepts two parameters:
+
+Formula to search for, the formula you're searching for.
+Previous cell, the last cell with the same formula. This parameter can be set to null if you are searching from the start of the worksheet.
+The examples below use worksheet data for practicing find methods:
+
+ 
+
+// For complete examples and data files, please go to https://github.com/aspose-cells/Aspose.Cells-for-.NET
+// The path to the documents directory.
+string dataDir = RunExamples.GetDataDir(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+// Creating a file stream containing the Excel file to be opened
+FileStream fstream = new FileStream(dataDir + "book1.xls", FileMode.Open);
+
+// Opening the Excel file through the file stream
+Workbook workbook = new Workbook(fstream);
+
+// Accessing the first worksheet in the Excel file
+Worksheet worksheet = workbook.Worksheets[0];
+
+// Finding the cell containing the specified formula
+Cell cell = worksheet.Cells.FindFormula("=SUM(A5:A10)", null);
+
+// Printing the name of the cell found after searching worksheet
+System.Console.WriteLine("Name of the cell containing formula: " + cell.Name);
+
+// Closing the file stream to free all resources
+fstream.Close();
+view rawExamples-CSharp-Data-Handling-Find-FindingCellsContainingFormula-1.cs hosted with ❤ by GitHub
+Finding Data or Formulas using FindOptions
+It is possible to find specified values using the Cells collection's Find method with various FindOptions. Typically, the Find method accepts the following parameters:
+
+Search value, the data or value to be searched for.
+Previous cell, the last cell that contained the same value. This parameter can be set to null when searching from the start.
+Find options, the find options.
+ 
+
+// For complete examples and data files, please go to https://github.com/aspose-cells/Aspose.Cells-for-.NET
+// The path to the documents directory.
+string dataDir = RunExamples.GetDataDir(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+// Instantiate the workbook object
+Workbook workbook = new Workbook(dataDir + "book1.xls");
+
+// Get Cells collection
+Cells cells = workbook.Worksheets[0].Cells;
+
+// Instantiate FindOptions Object
+FindOptions findOptions = new FindOptions();
+
+// Create a Cells Area
+CellArea ca = new CellArea();
+ca.StartRow = 8;
+ca.StartColumn = 2;
+ca.EndRow = 17;
+ca.EndColumn = 13;
+
+// Set cells area for find options
+findOptions.SetRange(ca);
+
+// Set searching properties
+findOptions.SearchNext = true;
+findOptions.SeachOrderByRows = true;
+
+// Set the lookintype, you may specify, values, formulas, comments etc.
+findOptions.LookInType = LookInType.Values;
+
+// Set the lookattype, you may specify Match entire content, endswith, starwith etc.
+findOptions.LookAtType = LookAtType.EntireContent;
+
+// Find the cell with value
+Cell cell = cells.Find(205, null, findOptions);
+
+if (cell != null)
+{
+    Console.WriteLine("Name of the cell containing the value: " + cell.Name);
+}
+else
+{
+    Console.WriteLine("Record not found ");
+}
+
+//Finding Cells Containing Specified String Value or Number
+It is possible to find specified string values by calling the same Find method found in the Cells collection with various FindOptions.
+
+Specify the FindOptions.LookInType and FindOptions.LookAtType properties. The following example code illustrates how to use these properties to find cells with various number or strings at the beginning or at the center or at the end of the cell's string.
+
+ 
+
+// For complete examples and data files, please go to https://github.com/aspose-cells/Aspose.Cells-for-.NET
+// The path to the documents directory.
+string dataDir = RunExamples.GetDataDir(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+// Instantiate the workbook object
+Workbook workbook = new Workbook(dataDir + "book1.xls");
+
+// Get Cells collection
+Cells cells = workbook.Worksheets[0].Cells;
+
+FindOptions opts = new FindOptions();
+opts.LookInType = LookInType.Values;
+opts.LookAtType = LookAtType.EntireContent;
+
+// Find the cell with the input integer or double
+Cell cell1 = cells.Find(205, null, opts);
+
+if (cell1 != null)
+{
+    Console.WriteLine("Name of the cell containing the value: " + cell1.Name);
+}
+else
+{
+    Console.WriteLine("Record not found ");
+}
+
+// Find the cell with the input string
+Aspose.Cells.Cell cell2 = cells.Find("Items A", null, opts);
+
+if (cell2 != null)
+{
+    Console.WriteLine("Name of the cell containing the value: " + cell2.Name);
+}
+else
+{
+    Console.WriteLine("Record not found ");
+}
+
+// Find the cell containing with the input string
+opts.LookAtType = LookAtType.Contains;
+Cell cell3 = cells.Find("Data", null, opts);
+
+if (cell3 != null)
+{
+    Console.WriteLine("Name of the cell containing the value: " + cell3.Name);
+}
+else
+{
+    Console.WriteLine("Record not found ");
+}
+
 
 
 
