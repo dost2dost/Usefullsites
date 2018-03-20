@@ -263,7 +263,28 @@ else
 {
     Console.WriteLine("Record not found ");
 }
+// aspose Listof objects
 
+ListObject lobj = worksheet.getListObjects().get(0);
+
+
+//Add filter in first column
+
+lobj.getAutoFilter().addFilter(0, "2"); //Check the value 2
+
+lobj.getAutoFilter().addFilter(0, "3"); //Check the value 3
+
+
+//Add filter in second column
+
+lobj.getAutoFilter().addFilter(1, "2"); //Check the value 2
+
+
+lobj.getAutoFilter().refresh();
+
+
+workbook.save(filePath + ".out.xlsx");
+//
 
 
 
