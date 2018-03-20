@@ -2,7 +2,21 @@
 libraryDependencies += "com.aspose" % "aspose-cells" % "18.2"
 
 resolvers += "AsposeJavaAPI" at "http://maven.aspose.com/repository/simple/ext-release-local/"
+//Export import datatable into database
 
+//Instantiating a Workbook object
+Workbook workbook = new Workbook();
+//Accessing the first worksheet in the Excel file
+Worksheet worksheet = workbook.Worksheets[0];
+//Create a new workbook for opening the template file 
+//From which I fill up a data table 
+Workbook wb = new Workbook(); 
+//Creating a file stream containing the Excel file to be opened
+FileStream fstream = new FileStream("d:\test\MyFile.xls",FileMode.Open);
+//Opening the Excel file through the file stream
+wb.Open(fstream);
+//Extract data from the worksheet and fill a datatable. 
+DataTable dt = wb.Worksheets[0].Cells.ExportDataTable(0,0,wb.Worksheets[0].Cells.MaxDataRow,wb.Worksheets[0].Cells.MaxDataColumn);
 //iterate rows in aspose
 
 //Access the Maximum Display Range
