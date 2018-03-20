@@ -2,6 +2,9 @@
 libraryDependencies += "com.aspose" % "aspose-cells" % "18.2"
 
 resolvers += "AsposeJavaAPI" at "http://maven.aspose.com/repository/simple/ext-release-local/"
+
+https://github.com/eBay/xcelite
+
 //Export import datatable into database
 
 //Instantiating a Workbook object
