@@ -3,7 +3,8 @@ libraryDependencies += "com.aspose" % "aspose-cells" % "18.2"
 
 resolvers += "AsposeJavaAPI" at "http://maven.aspose.com/repository/simple/ext-release-local/"
 
-https://github.com/eBay/xcelite
+https://github.com/eBay/xcelite										//ReadColumn with Annotations
+https://github.com/sweisser/excel2db/blob/master/src/main/java/com/weisser/excel2db/Excel2DB.java    //import xl into db execute query
 
 //Export import datatable into database
 
