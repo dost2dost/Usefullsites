@@ -10,3 +10,13 @@ ALTER TABLE enmt3_truf_vendor_tim_kurtz ALTER COLUMN vendor_provided_longitude_i
 //  add column 
 alter table waterfall_lte_data
 	add column usid numeric;
+	
+	//     Execute Query 4m Ebean;    
+	
+	row = Ebean.createSqlQuery(
+
+                        "Select full_name  from atoll_antenna_detail where antenna=" + antenna.getId() + ""
+                                + " AND frequency_mhz BETWEEN " + sectorRanges.get(0) + " AND " + sectorRanges.get(1)
+                                + " AND tilt = (select MIN(tilt) from atoll_antenna_detail"
+                                + " where antenna=" + antenna.getId() + " and frequency_mhz BETWEEN " + sectorRanges.get(0) + " AND " + sectorRanges.get(1) + " )")
+                        .findUnique();
