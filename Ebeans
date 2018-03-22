@@ -1,1 +1,6 @@
 https://archive-avaje-org.github.io/ebean/introquery.html    //Ebean Queries
+
+ String sql = "select count(*) as cnt from enmt3_truf_vendor_tim_kurtz";
+        SqlRow row = Ebean.createSqlQuery(sql)
+                .findUnique();
+        Integer count = row.getInteger("cnt");
