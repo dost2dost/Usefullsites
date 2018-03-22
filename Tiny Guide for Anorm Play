@@ -1,0 +1,392 @@
+/*
+
+Overview
+--------
+
+To run a query using anorm you need to do three things:
+
+ 1. Connect to the database (with or without a transaction)
+ 2. Create an instance of `anorm.SqlQuery` using the `SQL` string interpolator
+ 3. Call one of the methods on `SqlQuery` to actually run the query
+ 4. In some cases, pass a `ResultSetParser` as an argument to the method in step 3
+
+In some cases step 3 involves creating a `ResultSetParser` to dictate how to
+parse the results. We'll come to that below.
+
+Step 1: Connect to the database
+-------------------------------
+
+There are a few ways of doing this. We can connect with or without a transaction,
+and we can connect to any of the databases we have defined in `conf/application.conf`.
+
+We give each database in `application.conf` a name:
+
+    db.databaseid.driver=org.postgresql.Driver
+    db.databaseid.url="jdbc:postgresql://localhost:5432/databasename"
+
+Play expects us to define a "default" database:
+
+    db.default.driver=...
+    db.default.url=...
+
+but we can give a database any ID we like:
+
+    db.test.driver=...
+    db.test.url=...
+
+We can define as many databases as we want. See the documentation here for full instructions:
+  
+    https://www.playframework.com/documentation/2.3.x/ScalaDatabase
+
+*/
+
+import play.api.db._
+
+// Option A. Connect to the "default" database without a transaction:
+DB.withConnection { implicit conn =>
+  // query code goes here...
+}
+
+// Option B. Connect to another database without a transaction:
+DB.withConnection("databaseid") { implicit conn =>
+  // query code goes here...
+}
+
+// Option A. Connect to the "default" database with a transaction:
+DB.withTransaction { implicit conn =>
+  // query code goes here...
+}
+
+// Option B. Connect to another database with a transaction:
+DB.withTransaction("databaseid") { implicit conn =>
+  // query code goes here...
+}
+
+/*
+
+Step 2. Create an SqlQuery
+--------------------------
+
+Anorm gives us a way to write raw SQL and create a Scala object of type `anorm.SqlQuery`.
+
+`SqlQuery` has mehods to execute the query and return various types of result:
+
+*/
+
+import anorm._
+
+// We create the query using the `SQL""` string interpolator:
+val query = SQL"select * from mytable;"
+
+// We can embed Scala values in the SQL using the standard `${}` syntax.
+// Anorm escapes interpolated values appropriately:
+
+val value = // some scala value
+val query = SQL"select * from mytable where mycolumn = ${value};"
+
+/*
+
+Step 3. Call a method to execute the query
+------------------------------------------
+
+`SqlQuery` has several methods to actually start the query.
+Each method accepts an implicit `Connection` as a parameter,
+so we can only call them within a call to `withConnection` or
+`withTransaction`:
+
+*/
+
+// Option A. `query.execute()` executes a query and returns nothing:
+DB.withConnection { implicit conn =>
+  SQL"""
+    update mytable set col1 = $value where col2 = $anotherValue;
+  """.execute()
+  
+  // etc...
+}
+
+// Option B. `query.as(...)` executes a query and returns results.
+// The argument to `as(...)` is a `ResultSetParser`... see the next step:
+DB.withConnection { implicit conn =>
+  val rsParser: ResultSetParser[List[MyType]] = // ...
+
+  val results: List[MyType] = SQL"""
+    select * from mytable;
+  """.as(rsParser)
+
+  // etc...
+}
+
+// Option C. `query.executeInsert()` returns an `Option[Long]` primary key...
+// assuming your table is set up with an auto-incrementing integer primary key:
+DB.withConnection { implicit conn =>
+  val newPK: Option[Long] = SQL"""
+    insert into mytable (...) values (...);
+  """.executeInsert()
+  
+  // etc...
+}
+
+// Option D. `query.executeInsert(...)` returns a primary key of another type.
+// The argument to `executeInsert(...)` is a `ResultSetParser` to parse the keys:
+DB.withConnection { implicit conn =>
+  val rsParser: ResultSetParser[List[MyType]] = // ...
+
+  val newPKs: List[MyType] = SQL"""
+    insert into mytable (...) values (...);
+  """.executeInsert(rsParser)
+
+  // etc...
+}
+
+/*
+
+Step 4. Create a `ResultSetParser` to use with the method from Step 3
+---------------------------------------------------------------------
+
+If you're retrieving results from the database using `as(...)`, you 
+need to supply a `ResultSetParser` to tell Anorm how to parse the results 
+of the query. This is also true for the result of an `executeInsert()`.
+
+If you're using plain `execute()` you don't need this.
+
+We create `ResultSetParsers` in two steps:
+
+ A. Create a `RowParser` to specify what information is stored in each row.
+ B. Call one of four methods on `RowParser` to convert it to a `ResultSetParser`
+    that parses more than one row.
+
+Step 4A. Create a `RowParser`
+-----------------------------
+
+A `RowParser` is a bit like a `Reads` -- it specifies a transformation from untyped data
+(in this case a `java.sql.ResultSet`) to typed Scala data (an `Option` or `List` of domain objects).
+
+*/
+
+// Here is the syntax for creating a `RowParser`:
+val myCaseClassParser: RowParser[MyCaseClass] = (
+  SqlParser.somemethod1("columnname1") ~
+  SqlParser.somemethod2("columnname2") ~
+  SqlParser.somemethod3("columnname3") ~
+  SqlParser.somemethod4("columnname4") ~
+  SqlParser.somemethod5("columnname5") // etc...
+) map {
+  case columnvalue1 ~ columnvalue2 ~ columnvalue3 ~ columnvalue4 ~ columnvalue5 => // etc...
+    MyCaseClass(columnvalue1, columnvalue2, columnvalue3, columnvalue4, columnvalue5) // etc...
+}
+
+/*
+
+Let's look at the individual parts. First, the `SqlParser.somemethod(...)` parts.
+`anorm.SqlParser` is an object with a bunch of methods for parsing column data types:
+
+ - `SqlParser.str("columnname")`  creates a `RowParser[String]`  that parses "columname" as a `String`;
+ - `SqlParser.int("columnname")`  creates a `RowParser[Int]`     that parses "columname" as a `Int`;
+ - `SqlParser.long("columnname")` creates a `RowParser[Long]`    that parses "columname" as a `Long`;
+ - `SqlParser.date("columnname")` creates a `RowParser[Date]`    that parses "columname" as a `Date`;
+ - `SqlParser.bool("columnname")` creates a `RowParser[Boolean]` that parses "columname" as a `Boolean`;
+ - and so on...
+
+also...
+
+ - `SqlParser.scalar[Type]` creates a `RowParser[Type]` that parses a single-column row,
+   no matter what the column name is (useful for "select count(*) ..." style queries).
+
+See https://www.playframework.com/documentation/2.3.x/api/scala/index.html#anorm.SqlParser$
+for a complete list of methods.
+
+We can combine `RowParsers` together to create bigger `RowParsers` that parse more than one column:
+
+*/
+
+val rowParser1: RowParser[Int]    = SqlParser.int("column1") // parses "column1" as an `Int`
+val rowParser2: RowParser[String] = SqlParser.str("column2") // parses "column2" as a `String`
+
+val rowParser3: RowParser[~[Int, String]] = rowParser1 ~ rowParser2
+
+/*
+
+What's going on with this last line of code? There are two things called `~`:
+
+First, `anorm.~` is a pair-like case class that holds two values. See:
+https://www.playframework.com/documentation/2.3.x/api/scala/index.html#anorm.$tilde
+
+*/
+
+val pairLikeThing: ~[Int, String] = ~(123, "456")
+
+/*
+
+It's called `~` because Scala lets us write binary (two-argument) types and patterns
+using an infix syntax:
+
+*/
+
+val pairLikeThing: Int ~ String = ~(123, "456")
+
+pairLikeThing match {
+  case a ~ b =>
+    assert(a == 123)
+    assert(b == "456")
+}
+
+/*
+
+The other use of `~` is a method on `RowParser`:
+
+*/
+
+rowParser1 ~ rowParser2
+
+/*
+
+This method combines the `RowParsers` together into a single `RowParser` that extracts
+a values of type `~(a, b)` from the result-set. Its type is written like this:
+
+*/
+
+val rowParser3: RowParser[~[A, B]] = rowParser1 ~ rowParser2
+
+/*
+
+or we can write it using infix syntax:
+
+*/
+
+val rowParser3: RowParser[A ~ B] = rowParser1 ~ rowParser2
+
+/*
+
+We can `map` over a `RowParser` to produce a new parser with a different output:
+
+*/
+
+val rowParser4: RowParser[String] = rowParser3.map { valueFromRowParser3 =>
+  valueFromRowParser3 match {
+    case ~(valueFromRowParser1, valueFromRowParser2) =>
+      s"I extracted the integer $valueFromRowParser1 and the string $valueFromRowParser2"
+  }
+}
+
+/*
+
+We can reduce this to the code we wrote above in two steps. First, write the pattern 
+using infix syntax:
+
+*/
+
+val rowParser4: RowParser[String] = rowParser3.map { valueFromRowParser3 =>
+  valueFromRowParser3 match {
+    case valueFromRowParser1 ~ valueFromRowParser2 =>
+      s"I extracted the integer $valueFromRowParser1 and the string $valueFromRowParser2"
+  }
+}
+
+/*
+
+Second, write the mapping function as a partial function:
+
+*/
+
+val rowParser4: RowParser[String] = rowParser3.map {
+  case valueFromRowParser1 ~ valueFromRowParser2 =>
+    s"I extracted the integer $valueFromRowParser1 and the string $valueFromRowParser2"
+}
+
+/*
+
+All three versions of the code are semantically identical -- we're just using convenient
+syntax to cut down on typing.
+
+The final intuition we need to understand `RowParsers` is that instances of `~(a, b)`
+can be nested:
+
+*/
+
+val nestedTildes: ~[A, ~[B, C]] = ~(a, ~(b, c))
+
+/*
+
+Again, we can write the types infix to make them easier to read:
+
+*/
+
+val nestedTildes: A ~ B ~ C = ~(a, ~(b, c))
+
+/*
+
+We can pattern match using infix syntax too:
+
+*/
+
+nestedTildes match {
+  case a ~ b ~ c =>
+    // etc...
+}
+
+/*
+
+Bring it all back home, this gives us all the knowledge we need to understand the 
+`RowParser` pattern from above.
+
+We're extracting a bunch of values from individual columns, combining them into a set
+of nested instances of `~(a, b)`, and pattern matching to pull them apart again and
+turn them into something sane... in this case `MyCaseClass`:
+
+*/
+
+val myCaseClassParser: RowParser[MyCaseClass] = (
+  SqlParser.somemethod1("columnname1") ~
+  SqlParser.somemethod2("columnname2") ~
+  SqlParser.somemethod3("columnname3") ~
+  SqlParser.somemethod4("columnname4") ~
+  SqlParser.somemethod5("columnname5") // etc...
+) map {
+  case columnvalue1 ~ columnvalue2 ~ columnvalue3 ~ columnvalue4 ~ columnvalue5 => // etc...
+    MyCaseClass(columnvalue1, columnvalue2, columnvalue3, columnvalue4, columnvalue5) // etc...
+}
+
+/*
+
+Confusing as this all may seem, it's just syntax. Syntax we don't see very often,
+but syntax nonetheless.
+
+Step 4B. Turn our `RowParser` into a `ResultSetParser`
+------------------------------------------------------
+
+Our `RowParser` states how we want to parse a single row from our results. We can use one
+of four methods to turn that into a `ResultSetParser` that parses an entire set of results:
+
+*/
+
+// `rowParser.*` creates a `ResultSetParser` that parses all rows and returns a `List`:
+val allRowsParser: ResultSetParser[List[MyCaseClass]] = myCaseClassParser.*
+
+// `rowParser.single` creates a `ResultSetParser` that parses a single row
+// (and fails if the result set is empty);
+val singleRowParser: ResultSetParser[MyCaseClass] = myCaseClassParser.single
+
+// `rowParser.singleOpt` creates a `ResultSetParser` that parses 0 or 1 rows and returns an `Option`:
+val optionalRowParser: ResultSetParser[Option[MyCaseClass]] = myCaseClassParser.singleOpt
+
+// We can pass any of these `ResultSetParsers` to `as(...)` or `executeInsert(...)` to receive
+// the relevant results:
+
+val allRows: List[MyCaseClass] = 
+  SQL"""select * from mytable;""".
+  as(allRowsParser)
+
+val firstRow: Option[MyCaseClass] = 
+  SQL"""select * from mytable limit 1;""".
+  as(optionalRowParser)
+
+val countRows: Int = 
+  SQL"""select count(*) from mytable;""".
+  as(SqlParser.scalar[Int].single)
+
+/*
+
+That's it! That's all you need to know to use Anorm.
+
+*/
