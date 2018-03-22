@@ -1,4 +1,5 @@
 https://archive-avaje-org.github.io/ebean/introquery.html    //Ebean Queries
+https://github.com/ebean-orm-demo/demo-order/tree/master/src/main/java/app/data/query   //Query Examples
 
  String sql = "select count(*) as cnt from enmt3_truf_vendor_tim_kurtz";
         SqlRow row = Ebean.createSqlQuery(sql)
