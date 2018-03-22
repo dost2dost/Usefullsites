@@ -1,5 +1,9 @@
 /*
 
+
+https://www.jamesward.com/2012/02/21/play-framework-2-with-scala-anorm-json-coffeescript-jquery-heroku
+//////////////////
+
 Overview
 --------
 
@@ -37,6 +41,8 @@ but we can give a database any ID we like:
 We can define as many databases as we want. See the documentation here for full instructions:
   
     https://www.playframework.com/documentation/2.3.x/ScalaDatabase
+    
+    
 
 */
 
