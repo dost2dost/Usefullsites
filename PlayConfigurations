@@ -1,0 +1,143 @@
+
+
+//Route file
+
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Default path will just redirect to the computer list
+#GET     /                           controllers.HomeController.index()
+GET     /                         controllers.RptController.index1()
+GET     /tv                         controllers.RptController.saveTurfVendor()
+GET     /exQ                        controllers.RptController.EXQ()
+
+# Computers list (look at the default values for pagination parameters)
+#GET     /computers                  controllers.HomeController.list(p:Int ?= 0, s ?= "name", o ?= "asc", f ?= "")
+
+# Add computer
+#GET     /computers/new              controllers.HomeController.create()
+#POST    /computers                  controllers.HomeController.save()
+
+# Edit existing computer
+#GET     /computers/:id              controllers.HomeController.edit(id:Long)
+#POST    /computers/:id              controllers.HomeController.update(id:Long)
+
+# Delete a computer
+#POST    /computers/:id/delete       controllers.HomeController.delete(id:Long)
+
+# Map static resources from the /public folder to the /assets URL path
+#GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+
+//Sbt build file 
+name := "play-java-ebean-example"
+
+version := "0.0.1-SNAPSHOT"
+
+scalaVersion := "2.11.11"
+
+lazy val root = (project in file(".")).enablePlugins(PlayJava, PlayEbean)
+
+libraryDependencies ++= Seq(
+  jdbc,
+  "com.typesafe.play" %% "anorm" % "2.5.1"
+)
+
+libraryDependencies += "com.adrianhurt" %% "play-bootstrap" % "1.0-P25-B3"
+
+libraryDependencies += "com.aspose" % "aspose-cells" % "18.2"
+
+
+// https://mvnrepository.com/artifact/com.ebay/xcelite
+libraryDependencies += "com.ebay" % "xcelite" % "1.0.4"
+
+
+
+libraryDependencies ++= Seq(
+  "org.postgresql" % "postgresql" % "9.4.1208.jre7",
+  cache,
+  javaWs
+)
+
+libraryDependencies += "org.webjars" % "bootstrap" % "3.2.0"
+
+
+
+// https://mvnrepository.com/artifact/org.assertj/assertj-core
+//libraryDependencies += "org.assertj" % "assertj-core" % "3.9.1" % Test
+
+
+libraryDependencies += "com.monitorjbl" % "xlsx-streamer" % "1.2.1"
+
+resolvers += "AsposeJavaAPI" at "http://maven.aspose.com/repository/simple/ext-release-local/"
+
+
+
+
+//Application Configuration
+
+# Configuration
+
+application.name=computer-database
+
+akka.log-level = "WARN"
+
+# Database configuration
+# ~~~~~ 
+# You can declare as many datasources as you want.
+# By convention, the default datasource is named `default`
+#db.default.driver=org.h2.Driver
+#db.default.url="jdbc:h2:mem:play"
+db {
+  # You can declare as many datasources as you want.
+  # By convention, the default datasource is named `default`
+
+  # https://www.playframework.com/documentation/latest/Developing-with-the-H2-Database
+  # default.jndiName = DefaultDS
+  #db.driver = org.postgresql.Driver
+  # Default database configuration using PostgreSQL database engine
+  default.driver=org.postgresql.Driver
+  default.url="jdbc:postgresql://localhost:5432/conurets_automation"
+  #default.url = "jdbc:postgresql://localhost:5432/postgres"
+  default.username = postgres
+  default.password = "password,123"
+
+  default.jndiName=DefaultDS
+  #db.url = "jdbc:postgresql://localhost:5432/conurets_automation"
+  #db.username = postgres
+  #db.password = "password,123"
+
+
+  #default.driver = org.postgresql.Driver
+  #default.url = "jdbc:postgresql://localhost:5432/postgres"
+  #default.username = postgres
+  #default.password = postgres
+
+  #default.jndiName=DefaultDS
+
+  #default.driver=oracle.jdbc.driver.OracleDriver
+  #default.url="jdbc:oracle:thin:@ldap://oranamesrvr2.cc.emory.edu/rhitsecd,cn=OracleContext,dc=emory,dc=edu"
+  #default.username=ctapo
+  #default.password=jz8TXs8M
+
+
+  # You can turn on SQL logging for any datasource
+  # https://www.playframework.com/documentation/latest/Highlights25#Logging-SQL-statements
+  default.logSql=true
+}
+# Ebean configuration
+# ~~~~~
+# You can declare as many Ebean servers as you want.
+# By convention, the default server is named `default`
+ebean.default=["entities.*"]
+
+#ebean.datasource.default=test
+
+# Assets configuration
+# ~~~~~
+#"assets.cache./public/stylesheets/bootstrap.min.css"="max-age=3600"
+
+
+
