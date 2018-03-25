@@ -1,0 +1,12 @@
+select "Spectrum Bucket","RFDS ID"	FROM public._lte_data
+where "USID"='12561';
+
+select "RFDS ID"	FROM public._lte_data
+where "USID"='12561'
+group by "RFDS ID";
+
+select "USID"	FROM public._lte_data
+where "USID"='12561';
+
+select "PACE_NUMBER"	FROM public._lte_data
+where "PACE_NUMBER"='MRLOS000286';
