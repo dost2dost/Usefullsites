@@ -1,4 +1,5 @@
 http://www.postgresqltutorial.com/postgresql-add-column/
+http://www.postgresqltutorial.com/postgresql-tutorial/postgresql-except/     //postgre queries tutorials
 
 
 select nspname from pg_catalog.pg_namespace;                                          //Shows all schemas
