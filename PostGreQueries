@@ -22,3 +22,37 @@ alter table waterfall_lte_data
                                 + " where antenna=" + antenna.getId() + " and frequency_mhz BETWEEN " + sectorRanges.get(0) + " AND " + sectorRanges.get(1) + " )")
                         .findUnique();
 http://www.postgresqltutorial.com/postgresql-full-outer-join/
+//   								Except in post gre 
+
+SELECT
+ film_id,
+ title
+FROM
+ film
+EXCEPT
+ SELECT
+ DISTINCT inventory.film_id,
+ title
+ FROM
+ inventory
+ INNER JOIN film ON film.film_id = inventory.film_id
+ORDER BY title;
+
+//////
+SELECT use_id
+	FROM public.softsector_useids
+	where usid='12504' 
+	group by(use_id)
+EXCEPT
+SELECT useid FROM public.enmt3_truf_vendor_tim_kurtz
+	where usid='12504';
+	
+	SELECT use_id
+	FROM public.softsector_useids
+	--where usid='12504' 
+	group by(use_id)
+EXCEPT
+SELECT use_id
+	FROM public.softsector_useids
+	--where usid='12504' 
+	group by(use_id);
