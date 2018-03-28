@@ -20,3 +20,4 @@ alter table waterfall_lte_data
                                 + " AND tilt = (select MIN(tilt) from atoll_antenna_detail"
                                 + " where antenna=" + antenna.getId() + " and frequency_mhz BETWEEN " + sectorRanges.get(0) + " AND " + sectorRanges.get(1) + " )")
                         .findUnique();
+http://www.postgresqltutorial.com/postgresql-full-outer-join/
