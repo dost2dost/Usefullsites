@@ -56,3 +56,13 @@ SELECT use_id
 	FROM public.softsector_useids
 	--where usid='12504' 
 	group by(use_id);
+	////////////////////////////////////////////
+	
+	SELECT "Useid" FROM public."SiteMaster_UseID_W_LOSANGELES.csv"
+	where "USID"='12504'
+	group by "Useid"
+	EXCEPT
+	(SELECT useid
+	FROM public.enmt3_truf_vendor_tim_kurtz
+	where usid='12504'
+	group by useid)
