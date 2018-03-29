@@ -66,3 +66,10 @@ SELECT use_id
 	FROM public.enmt3_truf_vendor_tim_kurtz
 	where usid='12504'
 	group by useid)
+	///////////////////////////////////
+	SELECT pacenumber, submitters_email, structure_type, fa_location, rbsid, usid, site_state, useid, vendor_provided_latitude_in_decimals, vendor_provided_longitude_in_decimals, vendor_provided_gps_cable_length_feets, vendor_provided_gps_cable_type, vendor_provided_rbs_cable_length_feets, vendor_provided_rbs_cable_type, username, insert_date
+	FROM public.enmt3_truf_vendor_tim_kurtz
+	where id in(SELECT min(id)
+	FROM public.enmt3_truf_vendor_tim_kurtz 
+	group by usid); 	
+	
