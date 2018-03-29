@@ -5,3 +5,58 @@ https://github.com/ebean-orm-demo/demo-order/tree/master/src/main/java/app/data/
         SqlRow row = Ebean.createSqlQuery(sql)
                 .findUnique();
         Integer count = row.getInteger("cnt");
+        
+        //Custom select entity bean
+        public static List<Book> findDistinctBooks(String author) {
+    String sql = "select b.id, b.name, b.author, b.edition from book b where author = :author group by name";
+    RawSql rawSql = RawSqlBuilder.parse(sql)
+            .columnMapping("b.id", "id")
+            .columnMapping("b.name", "name")
+            .columnMapping("b.author", "author")
+            .columnMapping("b.edition", "edition")
+            .create();
+
+    return Ebean.createQuery(Book.class)
+            .setRawSql(rawSql)
+            .setParameter("author", author)
+            .findList();
+}
+// Group by in ebean by two way (2)
+// 1
+// Necessary imports..
+import com.avaje.ebean.Ebean;
+import com.avaje.ebean.Query;
+
+// SQL query.
+String sql = "select max(salary) as maximum_salary, min(salary) as minimum_salary, department_id from employee_details where joining_date > :date group by department_id";
+
+// Will get the list of Sql rows.
+List<SqlRow> sqlRows = Ebean.createSqlQuery(sql).setParameter("date", "1995-10-21").findList();
+
+// Getting first row of the list
+SqlRow sql_row = sqlRows.get(0);
+
+// Getting values of respective columns by using their name
+int maximumSalary = sql_row.getInteger("maximum_salary");
+int minimumSalary = sql_row.getInteger("minimum_salary");
+int departmentID  = sql_row.getInteger("department_id");
+//way 2 RawSql
+String sql   
+    = " select order_id, o.status, c.id, c.name, sum(d.order_qty*d.unit_price) as totalAmount"  
+    + " from o_order o"   
+    + " join o_customer c on c.id = o.kcustomer_id "  
+    + " join o_order_detail d on d.order_id = o.id "  
+    + " group by order_id, o.status ";  
+
+RawSql rawSql =   
+    RawSqlBuilder  
+        // let ebean parse the SQL so that it can  
+        // add expressions to the WHERE and HAVING   
+        // clauses  
+        .parse(sql)  
+        // map resultSet columns to bean properties  
+        .columnMapping("order_id",  "order.id")  
+        .columnMapping("o.status",  "order.status")  
+        .columnMapping("c.id",      "order.customer.id")  
+        .columnMapping("c.name",    "order.customer.name")  
+        .create();  
