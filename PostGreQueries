@@ -39,23 +39,15 @@ EXCEPT
 ORDER BY title;
 
 //////
-SELECT use_id
-	FROM public.softsector_useids
-	where usid='12504' 
-	group by(use_id)
-EXCEPT
-SELECT useid FROM public.enmt3_truf_vendor_tim_kurtz
-	where usid='12504';
-	
-	SELECT use_id
-	FROM public.softsector_useids
-	--where usid='12504' 
-	group by(use_id)
-EXCEPT
-SELECT use_id
-	FROM public.softsector_useids
-	--where usid='12504' 
-	group by(use_id);
+select "Useid","Rbs Identity"
+	FROM public."SiteMaster_UseID_W_LOSANGELES.csv"
+	where "USID"='51161'
+	Group by ("Useid","Rbs Identity")
+	except 
+	SELECT  "USEID","RBSID"
+	FROM public."_LTE_Vendor_Validation___1000_ro"
+	where "USID"='51161'
+	group by ("USEID","RBSID");
 	////////////////////////////////////////////
 	
 	SELECT "Useid" FROM public."SiteMaster_UseID_W_LOSANGELES.csv"
