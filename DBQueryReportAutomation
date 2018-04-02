@@ -1,0 +1,14 @@
+/*update softsector_useids
+	set distance='7'	
+	where "usid"='12504'
+	and use_id='27682.A.850.3G.1'
+	*/
+	
+	/*
+	update  validation_steps_statuses
+	set step3vdate='Pass'
+	where usid='108967'
+	*/
+	
+	SELECT "PACE Number", "Submitters E-mail", "Structure Type", "FA Location", "RBSID", "USID", "SITE_STATE", "USEID", "Vendor Provided LATITUDE in Decimals", "Vendor Provided LONGITUDE in Decimals", "Vendor Provided GPS Calble Length (Feet)", "Vendor Provided GPS Cable Type", "Vendor Provided RBS Cable Length (Feet)", "Vendor Provided RBS Cable Type", rowno
+	FROM public."_LTE_Vendor_Validation___1000_ro";
