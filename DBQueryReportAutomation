@@ -17,3 +17,13 @@ SELECT a.*,b.step_status as step1vdate,b.step2vdate,b.step3vdate,b.step4vdate,b.
 	from public."CSSNG_TURF_Vendor_Upload_Template" a
 	join public.validation_steps_statuses b
 	on a."USID"=b.usid;
+	
+	// vdate step1
+	
+	update public."CSSNG_TURF_Vendor_Upload_Template"
+	set vdatestep_1='Pass'
+	where "USID" in(select "USID"
+	FROM public."_LTE_Vendor_Validation___1000_ro"
+	where "USID" in (select "USID"	FROM public._lte_data)
+	and "PACE Number" in(select "PACE_NUMBER" 	FROM public._lte_data)
+	)
