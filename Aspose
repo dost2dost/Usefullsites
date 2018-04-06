@@ -169,6 +169,9 @@ Cell cell = worksheet.Cells.FindFormula("=SUM(A5:A10)", null);
 System.Console.WriteLine("Name of the cell containing formula: " + cell.Name);
 
 // Closing the file stream to free all resources
+
+
+https://docs.aspose.com/display/cellsnet/Import+Data+into+Worksheet#ImportDataintoWorksheet-ImportingfromCustomObjects// customarraylist aspose
 fstream.Close();
 view rawExamples-CSharp-Data-Handling-Find-FindingCellsContainingFormula-1.cs hosted with ❤ by GitHub
 Finding Data or Formulas using FindOptions
