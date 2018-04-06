@@ -25,3 +25,6 @@
     </thead>
 </table>
 }
+
+//Streams in play 
+public static Results.Status ok(java.io.InputStream content, int chunkSize)
