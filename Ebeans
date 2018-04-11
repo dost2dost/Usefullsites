@@ -1,5 +1,6 @@
 https://archive-avaje-org.github.io/ebean/introquery.html    //Ebean Queries
 https://github.com/ebean-orm-demo/demo-order/tree/master/src/main/java/app/data/query   //Query Examples
+https://www.programcreek.com/java-api-examples/?api=com.avaje.ebean.SqlQuery            //ebean examples
 
  String sql = "select count(*) as cnt from enmt3_truf_vendor_tim_kurtz";
         SqlRow row = Ebean.createSqlQuery(sql)
@@ -60,3 +61,25 @@ RawSql rawSql =
         .columnMapping("c.id",      "order.customer.id")  
         .columnMapping("c.name",    "order.customer.name")  
         .create();  
+        
+        // mycustome method
+        public static List<SqlRow>  findLst(String sql){
+
+        List<SqlRow> lst=null;
+        lst=Ebean.createSqlQuery(sql).findList();
+
+
+       return lst;
+
+    }
+    public static  SqlRow records(String sql){
+
+        SqlQuery sqlQuery = Ebean.createSqlQuery(sql);
+        SqlRow row = sqlQuery.findUnique();
+
+
+
+        return row;
+
+    }
+        
