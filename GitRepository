@@ -1,8 +1,10 @@
 https://stackoverflow.com/questions/24215032/cant-update-no-tracked-branch/24215233#24215233
 
 https://github.com/joshnh/Git-Commands                              //git basic commands
+https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html                //git basic commands
 
 git push -u origin master    // is use to update 
 git push origin master        //is used for push changes 
+
 
 
