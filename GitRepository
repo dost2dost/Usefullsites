@@ -1,0 +1,6 @@
+https://stackoverflow.com/questions/24215032/cant-update-no-tracked-branch/24215233#24215233
+
+git push -u origin master    // is use to update 
+git push origin master        //is used for push changes 
+
+
