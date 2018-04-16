@@ -28,3 +28,5 @@
 
 //Streams in play 
 public static Results.Status ok(java.io.InputStream content, int chunkSize)
+
+https://coderwall.com/p/aetska/play-2-javascript-router-setup-in-4-steps-with-java            ///routing with javascript
