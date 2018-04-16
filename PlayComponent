@@ -30,3 +30,4 @@
 public static Results.Status ok(java.io.InputStream content, int chunkSize)
 
 https://coderwall.com/p/aetska/play-2-javascript-router-setup-in-4-steps-with-java            ///routing with javascript
+https://www.objectify.be/wordpress/2012/04/27/jquery-ajax-with-play-2/                        ///javascript
