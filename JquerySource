@@ -6,3 +6,23 @@ https://coderwall.com/p/aetska/play-2-javascript-router-setup-in-4-steps-with-ja
 
 https://www.codeproject.com/Tips/844403/jQuery-Datatables-For-Beginners                                  //Dtable beginners jquery
 https://www.codeproject.com/Articles/246701/jQuery-for-Beginners                                          //jquery guide for beginers
+// javascript liberaries required for datatable with online cdn
+{
+<script 
+
+src="https://code.jquery.com/jquery-1.11.1.min.js"></script> // JQuery Reference
+
+<script 
+
+src="https://cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
+<script 
+
+src="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.js">
+</script>
+<link rel="stylesheet" 
+
+href="https://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" 
+
+href="https://cdn.datatables.net/plug-ins/9dcbecd42ad/integration/jqueryui/dataTables.jqueryui.css">
+}
