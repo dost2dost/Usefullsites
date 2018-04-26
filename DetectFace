@@ -18,3 +18,5 @@ https://medium.com/@aadimator/how-to-set-up-opencv-in-intellij-idea-6eb103c1d45c
 https://github.com/JavaOpenCVBook/code/wiki/Tutorial-1----Java-OpenCV-5-minute-setup      //javacv setup mvn
 https://stackoverflow.com/questions/30711480/javacv-maven-project                         //correct versions
 http://webcam-capture.sarxos.pl/                                                          //webcam sarxos.pl
+
+https://www.codeproject.com/Questions/1102532/How-do-i-how-to-create-images-database-in-OPENCV        //how to save in db
