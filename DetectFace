@@ -2,6 +2,8 @@ https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html   
 https://www.geeksforgeeks.org/image-processing-java-set-9-face-detection/                           //Face
 https://docs.opencv.org/3.0-beta/doc/user_guide/user_guide.html                                      //Open cv user guide
 
+https://github.com/JavaOpenCVBook/code/wiki/Tutorial-1----Java-OpenCV-5-minute-setup                //setup mvn project
+
 
 https://www.codeproject.com/Questions/1057974/Face-Detection-And-Saving-In-Database-Sql-Server    //Store faceimg in db
 
