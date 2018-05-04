@@ -6,6 +6,13 @@ https://docs.opencv.org/3.0-beta/doc/user_guide/user_guide.html                 
 
 https://github.com/JavaOpenCVBook/code/wiki/Tutorial-1----Java-OpenCV-5-minute-setup                //setup mvn project
 
+-- Decoding
+SELECT CONVERT_FROM(DECODE(field, 'BASE64'), 'UTF-8') FROM table;                                    //dbside-convert base64
+
+-- Encoding
+SELECT ENCODE(CONVERT_TO(field, 'UTF-8'), 'base64') FROM table;
+
+
 
 https://www.codeproject.com/Questions/1057974/Face-Detection-And-Saving-In-Database-Sql-Server    //Store faceimg in db
 
