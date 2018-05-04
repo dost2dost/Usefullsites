@@ -1,0 +1,22 @@
+
+accepted
+Face recognition is only the last step in the process. To solve this problem, you first have to find the face in the picture (face detection) and then in the detected face you will have to extract the characteristics of the face depending on the quality of the picture, light/flash used, facial/sideways, ... (feature extraction).
+
+Process chain:
+
+face detection -> feature extraction -> face recognition
+
+There are probably a hundred publications for each of these topics. It's up to you to assemble something.
+
+Also notable: this is not the kind of problem that has one global best solution. The chosen approach is at most optimal for the one special problem that you are trying to solve.
+
+Other keywords that you might want to consider:
+
+face tracking
+pose estimation
+facial feature tracking
+emotion recognition
+holistic templates
+feature geometry
+Also noteable: most SDKs that say they do face recognition in reality only do face detection (and sometimes (rarely) feature extraction). To do face recognition you need a huge database of known faces (face features), which of course most "vendors" don't have (not talking about all those agencies though... LOL).
+
