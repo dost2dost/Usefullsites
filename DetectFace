@@ -1,6 +1,7 @@
 
 https://stackoverflow.com/questions/21179019/how-to-compare-set-of-images-in-java-using-pixel-based-image-comparision-metric  // image compare by catalino
 https://github.com/sarxos/webcam-capture                                                          //wecamcapture
+https://github.com/nazarkazymov/compare-two-images                                                  //Compare Image java 
 
 https://docs.opencv.org/2.4/modules/contrib/doc/facerec/facerec_tutorial.html                       //Opencv face detection
 https://www.geeksforgeeks.org/image-processing-java-set-9-face-detection/                           //Face
