@@ -1,3 +1,6 @@
+//Facial feature detection and compare using  openimage liberary 
+https://github.com/openimaj/openimaj/blob/master/demos/examples/src/main/java/org/openimaj/examples/image/faces/FaceSimilarity.java
+//
 https://github.com/sarxos/webcam-capture/blob/master/webcam-capture-examples/webcam-capture-detect-face/src/main/java/com/github/sarxos/webcam/FacePainterExample.java  //FaceDetector
 
 https://www.geeksforgeeks.org/image-processing-java-set-14-comparison-two-images/                     //image comparison
