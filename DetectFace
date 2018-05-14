@@ -1,4 +1,5 @@
 https://github.com/oconnorhorrill/Face-Recognition   //java opencv faces recognition project source
+https://github.com/juleskt/FaceOff/blob/master/FaceOff/src/com/example/faceoff/ComparisonLogic.java  //two faces compare logic
 
 //Facial feature detection and compare using  openimage liberary 
 https://github.com/openimaj/openimaj/blob/master/demos/examples/src/main/java/org/openimaj/examples/image/faces/FaceSimilarity.java
