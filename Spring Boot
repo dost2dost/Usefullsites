@@ -1,1 +1,7 @@
 http://www.baeldung.com/rest-with-spring-series/
+//Aplication.properties
+spring.thymeleaf.cache=false
+spring.thymeleaf.enabled=true
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
+
