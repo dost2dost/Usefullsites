@@ -1,2 +1,17 @@
 https://www.sanwebe.com/2016/07/ajax-form-submit-examples-using-jquery
 https://codepen.io/btholt/pen/FArdh                                                        //jquery examples
+
+$('.btn').click(function() {
+  
+  $('.text').text('loading . . .');
+  
+  $.ajax({
+    type:"GET",
+    url:"https://api.meetup.com/2/cities",
+    success: function(data) {
+      $('.text').text(JSON.stringify(data));
+    },
+    dataType: 'jsonp',
+  });
+  
+});                                                                                   //jquery read ajax 
