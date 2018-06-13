@@ -1,0 +1,11 @@
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "http://api.msg91.com/api/sendhttp.php?sender=MSGIND&route=4&mobiles=&authkey=&encrypt=&country=0&message=Hello!%20This%20is%20a%20test%20message&flash=&unicode=&schtime=&afterminutes=&response=&campaign=",
+  "method": "GET",
+  "headers": {}
+}
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+});
