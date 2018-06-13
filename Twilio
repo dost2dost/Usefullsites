@@ -1,0 +1,4 @@
+// Find your Account Sid and Token at twilio.com/user/account
+    public static final String ACCOUNT_SID = "AC5ebf073c09ac437c728cc51f92c0903a";
+    public static final String AUTH_TOKEN = "974c941c9fa87e4384c81a6716f7a3d4";
+    public static final String TWILIO_NUMBER = "+15744440930";
