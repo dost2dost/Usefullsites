@@ -3,3 +3,5 @@ https://www.devglan.com/spring-security/spring-boot-security-rest-basic-authenti
 https://octoperf.com/blog/2018/03/08/securing-rest-api-spring-security/                   //web security
 
 https://github.com/ctlitrain/Basic-Authentication                                           //Basic Authentication
+
+http://www.baeldung.com/rest-template                                                       //Call a rest api
