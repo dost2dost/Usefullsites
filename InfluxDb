@@ -1,3 +1,6 @@
+run influxd --config influxdb.conf                                                    //Run from root directory
+
+
 https://github.com/miwurster/spring-data-influxdb
 https://opensourceforu.com/2016/12/introduction-influxdb-time-series-database/
 http://www.baeldung.com/java-influxdb
