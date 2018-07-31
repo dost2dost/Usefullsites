@@ -1,0 +1,1 @@
+SHOW FIELD KEYS ON "db_smart_park" from "Logs"                                  //view all keys in db
