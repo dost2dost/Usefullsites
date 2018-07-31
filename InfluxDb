@@ -8,3 +8,4 @@ http://csetutorials.com/influxdb-tutorial.html                                  
 https://sweetcode.io/getting-started-grafana-influxdb/                                //influx db with grafanna getstart
 https://stackoverflow.com/questions/26116711/how-to-install-influxdb-in-windows       // influx for windows exe 
 https://www.influxdata.com/blog/tldr-influxdb-tech-tips-december-01-2016/              //all queries for influx db
+https://docs.influxdata.com/influxdb/v1.6/query_language/schema_exploration/#show-field-keys            //Queries from database
