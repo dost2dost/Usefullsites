@@ -1,1 +1,3 @@
 SHOW FIELD KEYS ON "db_smart_park" from "Logs"                                  //view all keys in db
+
+https://cs.ulb.ac.be/public/_media/teaching/influxdb_2017.pdf                   //all type Queries of influx db
