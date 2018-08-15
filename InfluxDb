@@ -11,3 +11,5 @@ https://www.influxdata.com/blog/tldr-influxdb-tech-tips-december-01-2016/       
 https://docs.influxdata.com/influxdb/v1.6/query_language/schema_exploration/#show-field-keys            //Queries from database
 https://github.com/influxdata/influxdb-java/blob/master/src/main/java/org/influxdb/impl/TimeUtil.java //unix base time conversion influx db
 http://www.baeldung.com/current-date-time-and-timestamp-in-java-8                       //epoch unix time in java8
+
+https://www.w3cschool.cn/doc_influxdata/influxdata-influxdb-v1-2-query_language-index.html?lang=en        //W3school influx query language
