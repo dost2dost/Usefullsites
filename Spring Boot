@@ -18,3 +18,5 @@ spring.thymeleaf.enabled=true
 spring.thymeleaf.prefix=classpath:/templates/
 spring.thymeleaf.suffix=.html
 
+https://www.romaniancoder.com/spring-boot-live-reload-with-intellij/                        //Spring Boot Dev Tool in intelig
+
