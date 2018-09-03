@@ -1,3 +1,6 @@
+boolean expression ? value1 : value2;
+
+
 https://www.javacodegeeks.com/                                                                          //Java parctice in short
 https://examples.javacodegeeks.com/java-basics/lambdas/java-8-lambda-expressions-tutorial/              //Examples tutorials
 
