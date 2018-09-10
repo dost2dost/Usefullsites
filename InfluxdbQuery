@@ -1,3 +1,11 @@
+List<QueryResult.Result> results = queryResulTags.getResults();
+
+//        QueryResult.Series series=  queryResulTags.getResults().get(0).getSeries().get(0);
+        if (results != null && results.get(0) != null
+                && results.get(0).getSeries() != null) {
+
+
+
 SHOW FIELD KEYS ON "db_smart_park" from "Logs"                                  //view all keys in db
 
 https://cs.ulb.ac.be/public/_media/teaching/influxdb_2017.pdf                   //all type Queries of influx db
