@@ -1,8 +1,8 @@
 List<QueryResult.Result> results = queryResulTags.getResults();
-
-//        QueryResult.Series series=  queryResulTags.getResults().get(0).getSeries().get(0);
         if (results != null && results.get(0) != null
-                && results.get(0).getSeries() != null) {
+                && results.get(0).getSeries() != null) {}
+                
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                
 
 
 
