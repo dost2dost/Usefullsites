@@ -1,3 +1,34 @@
+//Ajax methods
+$(document).ready(function(){
+    $("#username_admin").change(function(){
+        var uname = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: "https://localhost:8443/admin/users/uniqueUsername",
+            data: {"uname": uname},
+            success: function(msg){
+
+                  if(msg == 0)
+                    alert("OK");
+                  else
+                    alert("User name exists !... try another");*//*
+
+                alert(msg + uname);
+
+
+            },
+            error:function(){
+                alert("ajax failed" +uname);
+            }
+        });
+
+    });
+});
+
+
+
+
+/////
 var settings = {
   "async": true,
   "crossDomain": true,
@@ -9,3 +40,6 @@ var settings = {
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
+
+
+//
