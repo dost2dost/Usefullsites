@@ -1,0 +1,32 @@
+// finding sorting by row
+var table = $('#myTable').DataTable();
+table.rows().every( function () {
+ var data = this.data();
+ if (data[0] === 'user 2') {
+  data[3] = 'Male';
+  this.data(data);
+ }
+});
+/*
+var tabl = $('#tblReportResultsDemographics tr').length;                                                          //Change the css of javascript datatable
+
+            for(var i = 0; i<tabl; i++){
+                var saad = $('#tblReportResultsDemographics tr:eq('+ i +') td:eq(3)').text();
+                if( saad < -45){
+                    var sunny = "<span class='badge badge-danger'>"+ saad +"</span>";
+                    $('#tblReportResultsDemographics tr:eq('+ i +') td:eq(3)').text("").append(sunny);
+                }
+
+                var temprature = $('#tblReportResultsDemographics tr:eq('+ i +') td:eq(6)').text();
+                if( temprature <= 31 || temprature>121){
+                    var tempin = "<span class='badge badge-danger'>"+ temprature +"</span>";
+                    $('#tblReportResultsDemographics tr:eq('+ i +') td:eq(6)').text("").append(tempin);
+                }
+
+
+            }
+
+*/
+/*
+<span ng-class="x.alaramtype == 'RSSI' ? '{{x.badgecolor}}' : ''">{{ x.rssi }}</span>                             apply css through ifelse
+*/
