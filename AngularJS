@@ -20,3 +20,4 @@ http://embed.plnkr.co/69FcBE/                                                   
  
  <span ng-class="x.alaramtype == 'RSSI' ? '{{x.badgecolor}}' : ''">{{ x.rssi }}</span>         // chang css class ingular js in if else
  
+https://www.npmjs.com/package/ng-stomp                                                        //ng-stomp for somp with angular js
