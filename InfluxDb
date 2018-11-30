@@ -1,3 +1,5 @@
+https://www.w3cschool.cn/doc_influxdata/influxdata-influxdb-v1-2-query_language-functions-index.html  // influx query Guide -vip
+
 run influxd --config influxdb.conf                                                    //Run from root directory
 
 https://docs.influxdata.com/influxdb/v1.6/troubleshooting/frequently-asked-questions/     //FAQ (vip)
