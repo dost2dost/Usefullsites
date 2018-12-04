@@ -21,3 +21,5 @@ http://embed.plnkr.co/69FcBE/                                                   
  <span ng-class="x.alaramtype == 'RSSI' ? '{{x.badgecolor}}' : ''">{{ x.rssi }}</span>         // chang css class ingular js in if else
  
 https://www.npmjs.com/package/ng-stomp                                                        //ng-stomp for somp with angular js
+
+https://radar.techcabal.com/t/angularjs-export-html-table-to-pdf-excel-and-doc-format/101      // Demerits of angulajs
