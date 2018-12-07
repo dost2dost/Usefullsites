@@ -1,0 +1,6 @@
+//   count in list with streams
+
+long numberOfElephants = seussCountActivities
+            .stream()
+            .filter(p -> p.equals("Elephants"))
+            .count();
