@@ -1,3 +1,6 @@
+
+https://stackoverflow.com/questions/41299571/how-to-create-a-measurement-in-influxdb   //Isertion with line protocol
+
 https://www.w3cschool.cn/doc_influxdata/influxdata-influxdb-v1-2-query_language-functions-index.html  // influx query Guide -vip
 
 run influxd --config influxdb.conf                                                    //Run from root directory
