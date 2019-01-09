@@ -1,0 +1,19 @@
+
+
+Step 1 run cmd with administrator
+
+// How to check kill the port 
+
+Step 1
+
+Run command-line as an Administrator. Then run the below mention command. type your port number in yourPortNumber
+
+netstat -ano | findstr :yourPortNumber
+
+
+
+Step 2
+
+Then you execute this command after identify the PID.
+
+taskkill /PID typeyourPIDhere /F
