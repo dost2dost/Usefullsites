@@ -30,3 +30,5 @@ spring.thymeleaf.suffix=.html
 
 https://www.romaniancoder.com/spring-boot-live-reload-with-intellij/                        //Spring Boot Dev Tool in intelig
 
+http://www.vogella.com/tutorials/SpringBoot/article.html                                  //vogella tut for practice 
+
