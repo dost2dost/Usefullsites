@@ -32,3 +32,5 @@ https://www.logicbig.com/tutorials/spring-framework/spring-integration/mvc-webso
 https://code.tutsplus.com/tutorials/start-using-html5-websockets-today--net-13270 //jquery connect websockets
 
 https://dzone.com/articles/real-time-communication-implementing-websockets-wi                           //Custom websocket handler vip
+
+https://www.baeldung.com/async-http-client-websockets                               //HttpSocket Client in java 
