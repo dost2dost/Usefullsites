@@ -31,4 +31,5 @@ spring.thymeleaf.suffix=.html
 https://www.romaniancoder.com/spring-boot-live-reload-with-intellij/                        //Spring Boot Dev Tool in intelig
 
 http://www.vogella.com/tutorials/SpringBoot/article.html                                  //vogella tut for practice 
+https://www.baeldung.com/spring-boot-war-tomcat-deploy                                    // War deployee on tomcate 
 
