@@ -34,3 +34,5 @@ https://code.tutsplus.com/tutorials/start-using-html5-websockets-today--net-1327
 https://dzone.com/articles/real-time-communication-implementing-websockets-wi                           //Custom websocket handler vip
 
 https://www.baeldung.com/async-http-client-websockets                               //HttpSocket Client in java 
+
+https://stackoverflow.com/questions/49378759/path-parameters-in-websocketconfigurer-addhandler-in-spring   //Socket session handler
