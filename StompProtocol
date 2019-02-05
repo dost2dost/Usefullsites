@@ -1,12 +1,15 @@
 
+
+
+
 https://github.com/forresthopkinsa/StompProtocolAndroid                           //Current guide to connect 
 
 https://github.com/topics/stompwebsocket                                      //Stomp github different topics 
 
-https://jitpack.io/p/MobileDews/Android-Stomp-Over-Websocket                                          //Stomp to android 
+https://jitpack.io/p/MobileDews/Android-Stomp-Over-Websocket                                          //Stomp to android /curentwork
 
 http://jmesnil.net/stomp-websocket/doc/                                                               //Stomp guide 
 
 https://github.com/boumba100/android-stomp-websocket                                                  //stomp client in android (VIP)
 
-https://github.com/NaikSoftware/StompProtocolAndroid                                                  //android stomp client by naiksoftware
+https://github.com/NaikSoftware/StompProtocolAndroid                                     //android stomp client by naiksoftware
