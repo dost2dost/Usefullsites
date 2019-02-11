@@ -1,3 +1,6 @@
+http://csetutorials.com/fetch-and-write-influxdb-data-using-java.html                   //java api to read and write on influx db 
+
+
 List<QueryResult.Result> results = queryResulTags.getResults();
         if (results != null && results.get(0) != null
                 && results.get(0).getSeries() != null) {}
