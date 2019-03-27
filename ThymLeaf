@@ -12,3 +12,5 @@ http://zetcode.com/springboot/mysql/                                            
 https://dandelion.github.io/components/datatables/1.0.1/docs/html/#1-1-what-is-dandelion-datatables         //Using Thym leaf datatable example
 
 https://blog.exxeta.com/2016/08/03/simple-excel-export-spring-based-web-application/                      // export to excel using spring mvc
+
+https://medium.com/@grokwich/spring-boot-thymeleaf-html-form-handling-762ef0d51327                        // forms handling in thymleaf 
