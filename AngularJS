@@ -1,4 +1,7 @@
 
+
+https://www.webcodegeeks.com/javascript/angular-js/angularjs-file-upload-example/             //angularjs file uploading 
+
 https://embed.plnkr.co/plunk/VT5Eps                               //ng-table export to csv
 ng-class="$even ? 'even-row' : 'odd-row'"                       //ng-class ternay operator if and else 
 <span ng-class="x.alaramtype == 'RSSI' ? '{{x.badgecolor}}' : ''">{{ x.rssi }}</span>   //ng-class ternay operator if and else 
