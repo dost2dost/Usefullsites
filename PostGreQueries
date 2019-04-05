@@ -10,6 +10,11 @@ select column_name from information_schema.columns where table_name = 'sitemaste
 
 ALTER TABLE enmt3_truf_vendor_tim_kurtz ALTER COLUMN vendor_provided_longitude_in_decimals  TYPE text USING (id::text); //Alter table Column
 
+//alter tcolumn type in post gre 
+ALTER TABLE basic_information
+    ALTER COLUMN serial_number TYPE TEXT USING serial_number::TEXT;
+    
+    
 //  add column 
 alter table waterfall_lte_data
 	add column usid numeric;
