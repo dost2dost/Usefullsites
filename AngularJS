@@ -3,6 +3,8 @@
 http://techfunda.com/howto/565/http-post-server-request                                       //Angularjs by techfundas
 https://www.webcodegeeks.com/javascript/angular-js/angularjs-file-upload-example/             //angularjs file uploading 
 
+https://stackoverflow.com/questions/25850298/angularjs-service-not-returning-value            // calback return value from service in angularjs
+
 https://embed.plnkr.co/plunk/VT5Eps                               //ng-table export to csv
 ng-class="$even ? 'even-row' : 'odd-row'"                       //ng-class ternay operator if and else 
 <span ng-class="x.alaramtype == 'RSSI' ? '{{x.badgecolor}}' : ''">{{ x.rssi }}</span>   //ng-class ternay operator if and else 
