@@ -31,3 +31,24 @@ http://embed.plnkr.co/69FcBE/                                                   
 https://www.npmjs.com/package/ng-stomp                                                        //ng-stomp for somp with angular js
 
 https://radar.techcabal.com/t/angularjs-export-html-table-to-pdf-excel-and-doc-format/101      // Demerits of angulajs
+
+// Angularjs service callback to get value from service to controller
+A couple things are wrong with the above. You assign this.prepTime to getPrepTimes(). The () there will invoke getPrepTimes immediately, and not when you actually call it! You also need to utilize callbacks to get your data back and use it:
+
+angular.module('recipeapp').service('prepTimeService',['$http', function($http){
+    this.prepTime = getPrepTimes;
+
+    function getPrepTimes(callback) {
+        $http({
+            url: '/prep_times/index.json',
+            method: 'GET'
+        }).success(function (data, status, header, config){
+            callback(data);
+        });
+    };
+}]);
+And now use it like so:
+
+ prepTimeService.prepTime(function(data) {
+     $scope.prep_time = data;
+ });    
