@@ -52,3 +52,21 @@ And now use it like so:
  prepTimeService.prepTime(function(data) {
      $scope.prep_time = data;
  });    
+ 
+ // populate table with angular js with header table and body 
+ <table  class="table table-bordered bordered table-striped table-condensed datatable scroll-pane" ui-jq="dataTable">
+                <thead>
+                <tr>
+                    <th ng-repeat="(key, val) in bulkimport[0]">{{key}}</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in bulkimport">
+                    <td ng-repeat="(key, val) in item">{{val}}</td>
+                </tr>
+
+
+                </tbody>
+
+            </table>
