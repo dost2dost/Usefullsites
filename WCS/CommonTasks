@@ -1,2 +1,5 @@
 // kill process by cmd 
 taskkill /f /im java.exe
+
+// Fix the CORBA OR ROLLBACK OR EJB Issues 
+https://www.ibm.com/support/pages/transactionrolledbackexception-when-trying-access-websphere-commerce-tools
