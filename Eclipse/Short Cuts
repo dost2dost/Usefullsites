@@ -1,0 +1,160 @@
+**********Manage Files and Projects
+
+1) Ctrl+N        Create new project using the Wizard
+
+2) Alt+F, then .  Open project, file, etc.
+
+3) Ctrl+Shift+R   For finding any resource (file) including config xml files
+
+4) Ctrl + Shift + T  for finding class even from jar
+
+5) Alt+Enter       Show and access file properties
+
+6) Ctrl+S             Save current file
+
+7) Ctrl+Shift+S      Save all files
+
+8) Ctrl+W or Ctrl+F4   Close current file
+
+9) Ctrl+Shift+W or Ctrl+Shift+F4   Close all files
+
+10) F5     Refresh content of selected element with local file system
+
+11) Ctrl + T  for toggling between supertype and subtype
+
+12) CTRL+Shift+G, which searches the workspace for references to the selected method or variable
+
+13)   Ctrl+Shift+L to view listing for all Eclipse keyboard shortcuts.
+
+******************Editor Window
+
+Focus/ cursor must be in Editor Window  to work these eclipse shortcut.
+
+1) F12   Jump to Editor Window
+
+2) Ctrl+M  Maximize or un-maximize current Editor Window (also works for other Windows)
+
+3) Ctrl+E   Show list of open Editors. Use arrow keys and enter to switch
+
+4) Ctrl+F6/Ctrl+Shift+F6  Show list of open Editors. Similar to ctrl+e but switches immediately upon release of ctrl
+
+5) Alt+Arrow Left/Alt+Arrow Right  Go to previous / go to next Editor Window
+
+6) Alt+-  Open Editor Window Option menu
+
+7) Ctrl+F10, then n   Show or hide line numbers
+
+8) Select text and press Ctrl + Shift + F for formatting.
+*************************************************************Navigate in Editor
+
+1) Home/End Jump to beginning / jump to end of indention. Press home twice to jump to beginning of line
+
+2) Ctrl+Home/End   Jump to beginning / jump to end of source
+
+3) Ctrl+Arrow Right/Arrow Left   Jump one word to the left / one word to the right
+
+4) Ctrl+Shift+Arrow Down/Arrow Up  for navigating from member to member (variables and methods)
+
+5) Ctrl+L Jump to Line Number.
+
+6) To hide/show line numbers, press ctrl+F10 and Then press N
+
+7) Ctrl+Q  Jump to last  edited location
+
+8) Move to one problem (i.e.: error, warning) to the next (or previous) in a file: Ctrl +. For next, and Ctrl +, for the previous problem
+
+9) Ctrl+Shift+P   to find closing brace. Place the cursor at the opening brace and use this.
+
+10) Ctrl+Arrow Down/Ctrl+Arrow Up  Scroll Editor without changing cursor position
+
+11) Alt + right and Alt + left for going back and forth while editing.
+
+12) Alt + Shift + W for show in package explorer
+
+13)    F3 This Eclipse shortcut is very useful to see function definition very quickly.
+
+ *******************************************************************************Edit Code
+
+These Eclipse shortcuts are very helpful for editing code in Eclipse.
+
+1) Ctrl+C/Ctrl+X/Ctrl+V     copy,Cut and paste
+
+2) F2 Renaming Select Any class,interface,properties file etc.
+
+3) Ctrl+Z     Undo last action
+
+4) Ctrl+Y      Redo last (undone) action
+
+5) Ctrl+D      Delete Line
+
+6) Alt+Arrow Up/Arrow Down   Move current line or selection up or down
+
+7) Shift+Enter  Enter line below current line
+
+8) Shift+Ctrl+Enter Enter line above current line
+
+
+ 
+9) Shift+Ctrl+Y   Change selection to all lower case
+
+10)Shift+Ctrl+X    Change selection to all upper case
+
+*******************************************************************Search and Replace
+
+1) Ctrl+F Open find and replace dialog
+
+2) Ctrl+K   find next occurrence of search term
+
+3) Ctrl+H   Search Workspace (Java Search, Task Search, and File Search)
+
+4) Ctrl+Shift+O   for organize imports
+
+************************************************************* Indentation and Comments
+
+1) Tab/Shift+Tab  Increase / decrease indent of selected text
+
+2) Ctrl+I Correct Indentation of selected text or of current line
+
+3) Ctrl+Shift+F Autoformat all code in Editor using code formatter
+
+4) Ctrl+/  Comment / uncomment line
+
+5) Ctrl+Shift+/   Add Block Comment
+
+6) Ctrl+Shift+\    Remove Block Comment
+
+****************************************************************Code Information
+
+1) Ctrl+O  For quick outline going quickly to method
+
+2) F3    Open Declaration: Jump to Declaration of selected class, method, or parameter
+
+3) F4    Selecting class and pressing F4 to see its Type hierarchy
+
+4) Ctrl+Alt+H   Open Call Hierarchy
+
+5) Ctrl+Shift+U   Find occurrences of expression in current file
+
+6) Ctrl+move over method  Open Declaration or Implementation
+
+******************************************************************Refactoring
+
+1) Alt+Shift+R  Rename selected element and all references
+
+2) Alt+Shift+C  Change method signature (with method name selected)
+
+3) Alt+Shift+M  Extract selection to method
+
+4) Alt+Shift+L  Extract local variable: Create and assigns a variable from a selected expression
+
+********************************************************************************Run and Debug
+
+1) F11   Run
+
+2) F5     Step Into function
+
+3) F6     Next step (line by line)
+
+4) F7     Step out
+
+5) F8     Skip to next Breakpoint
