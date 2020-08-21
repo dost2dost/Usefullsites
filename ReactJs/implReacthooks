@@ -1,0 +1,24 @@
+import React,{useState}from 'react';
+import './App.css';
+
+function App() {
+  const [state,setState]=useState({count: 4,them:'blue'}  );
+  const count=state.count;
+  const them=state.them;
+  function decrementCount(){
+    setState(prevState => {return {...prevState,count: prevState.count-1}});
+  };
+  function incrementCount(){
+    setState(prevState=>{return{...prevState,count:prevState.count+1}})
+  }
+  return (
+    <div>
+      <button className="button" onClick={incrementCount} >+</button>
+  <span>{count}</span>
+  <span>{them}</span>
+      <button className="button2" onClick={decrementCount}>-</button>
+    </div>
+  );
+}
+
+export default App;
