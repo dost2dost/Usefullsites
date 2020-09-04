@@ -1,0 +1,21 @@
+// 8 Javascript array methods from simple Dev
+const items=[{name:'Tv',price:500},{name:'Radio',price:300},{name:'laptop',price:50078}];
+const itemNames=items.map((item)=>{return item.name});
+const itemPrices=items.map((item)=>{return item.price});
+const itemFound=items.find((item)=>{return item.name==='Tv'})
+
+//console.log(itemFound);
+//For each loop 
+//items.forEach((item)=>{console.log(item.name)})
+//Return true if any value found in array of some 
+const isCheaperItem=items.some((item)=>{return item.price<500})
+//Return true if all items meet condition
+const isFound=items.every((item)=>{return item.price <= 50079})
+//reduce method return cumulative product of array of
+const total=items.reduce((total,items)=>{
+    return items.price+total;
+},0)
+// include is used to check if array contain a value return boolean
+const nums=[1,2,3,4,5,6,7,8,9];
+const numtwo=nums.includes(2)
+console.log(numtwo)
