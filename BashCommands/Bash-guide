@@ -1,0 +1,2 @@
+// Search match with exact case insensitive no of line After and befor rows 
+grep -win -C "dost"
