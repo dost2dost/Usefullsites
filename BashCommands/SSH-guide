@@ -3,3 +3,5 @@ ssh-keygen
 
 // configure key on server 
 cat ~/.ssh/id_rsa.pub | ssh demo@198.51.100.0 "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >>  ~/.ssh/authorized_keys"
+// Copy file from local to remote through ssh 
+scp ~/test.txt dost@192.168.1.29:~
