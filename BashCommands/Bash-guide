@@ -8,3 +8,7 @@ grep -winr "dost" .
 grep -wirl "dost" .
 // returns file names those contain string with no of ocurrence 
 grep -wirc "dost" .
+// Narrow down the search use pip sign 
+history | grep "dost" | grep "dotfile"
+// this will return match expression of any sequence of no with dash or phone no 
+grep "...-...-..."
