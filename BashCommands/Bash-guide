@@ -1,2 +1,4 @@
 // Search match with exact case insensitive no of line After and befor rows 
-grep -win -C "dost"
+grep -win -C "dost" file1
+//search in all files in current directory
+grep -win -C "dost" ./*
