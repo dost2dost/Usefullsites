@@ -4,3 +4,7 @@ grep -win -C "dost" file1
 grep -win -C "dost" ./*
 // Recusive search in sub directories 
 grep -winr "dost" .
+// returns file names those contain string 
+grep -wirl "dost" .
+// returns file names those contain string with no of ocurrence 
+grep -wirc "dost" .
