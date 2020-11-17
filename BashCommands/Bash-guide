@@ -2,3 +2,5 @@
 grep -win -C "dost" file1
 //search in all files in current directory
 grep -win -C "dost" ./*
+// Recusive search in sub directories 
+grep -winr "dost" .
