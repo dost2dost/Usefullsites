@@ -1,1 +1,5 @@
 
+netstat -atn           # For tcp
+netstat -aun           # For udp
+netstat -atun          # For both
+netstat -tulnp | grep <port no>
