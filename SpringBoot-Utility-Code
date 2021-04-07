@@ -1,0 +1,17 @@
+//to download a file using restTemplate 
+   @Autowired
+   private RestTemplateBuilder restTemplate;
+   
+   public void downloadFile(){     // This method will download file using RestTemplate
+       try {
+           HttpHeaders headers = new HttpHeaders();
+           headers.setAccept(Arrays.asList(MediaType.APPLICATION_OCTET_STREAM));
+           HttpEntity<String> entity = new HttpEntity<>(headers);
+           ResponseEntity<byte[]> response = restTemplate.build()
+                                                         .exchange("http://localhost:8080/downloadFile", HttpMethod.GET, entity, byte[].class);
+           Files.write(Paths.get("e:\\download-files\\demo1.pdf"), response.getBody());
+       }catch (Exception e){
+           e.printStackTrace();
+       }
+   }
+   /******************************************************************/
