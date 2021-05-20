@@ -9,4 +9,6 @@ sudo fuser -k 9001/tcp
 or 
 netstat -ltnp | grep -w '3000'
 kill -9 29972
+//Allow port on tcp on ubuntu
+sudo ufw allow 8083/tcp
 
