@@ -21,3 +21,11 @@ docker-compose up -d --scale database=4
 /**********************************************/Docker delet all images & containers/****************************/
 docker rmi $(docker images -q)
 docker rm $(docker ps -a -q)
+# List all containers (only IDs)
+docker ps -aq
+# Stop all running containers
+docker stop $(docker ps -aq)
+# Remove all containers
+docker rm $(docker ps -aq)
+# Remove all images
+docker rmi $(docker images -q)
