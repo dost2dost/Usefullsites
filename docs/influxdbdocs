@@ -2,3 +2,6 @@ https://docs.influxdata.com/influxdb/cloud/api-guide/client-libraries/
 
 //Java-client 
 https://www.javatips.net/api/influxdb-java-master/src/main/java/org/influxdb/InfluxDB.java
+
+// influx lang expressions 
+https://docs.influxdata.com/influxdb/cloud/reference/flux/language/expressions/
