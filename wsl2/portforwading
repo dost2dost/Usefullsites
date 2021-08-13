@@ -1,0 +1,14 @@
+netsh interface portproxy add v4tov4 listenport= listenaddress=0.0.0.0 connectport= connectaddr
+
+Parameters explanation:
+
+listenport: the port that Windows will listen
+
+listenaddress: the address that your Windows will listen. Usually 0.0.0.0 should do.
+
+connectport: the port that your Linux Distro through wsl2 will listen.
+
+connectaddress: the public IP of your Linux wsl2 instance (found in step 1)
+
+Use cmd or PowerShell as Administrator to run the above command.
+ifconfig. hostname --all-ip-addresses
