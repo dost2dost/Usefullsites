@@ -1,3 +1,8 @@
+*********************vip***********
+// netsh interface portproxy add v4tov4 listenport=19000 listenaddress=0.0.0.0 `
+    connectport=19000 connectaddress=$($(wsl hostname -I).Trim());
+
+
 //https://stackoverflow.com/questions/61002681/connecting-to-wsl2-server-via-local-network/64986363#64986363
 
 netsh interface portproxy add v4tov4 listenport= listenaddress=0.0.0.0 connectport= connectaddr
@@ -14,3 +19,10 @@ connectaddress: the public IP of your Linux wsl2 instance (found in step 1)
 
 Use cmd or PowerShell as Administrator to run the above command.
 ifconfig. hostname --all-ip-addresses
+//
+*****************socket b/w win and wsl***********************
+Here's a solution that is perhaps simpler than many of the others that have been offered. You need a WSL1 instance with socat installed in addition to the WSL2 instance that you're using.
+
+On the WSL1 instance, start socat like this:
+
+socat -d TCP-LISTEN:3000,reuseaddr,fork TCP:localhost:3000
