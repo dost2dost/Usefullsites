@@ -1,3 +1,5 @@
+//https://stackoverflow.com/questions/61002681/connecting-to-wsl2-server-via-local-network/64986363#64986363
+
 netsh interface portproxy add v4tov4 listenport= listenaddress=0.0.0.0 connectport= connectaddr
 
 Parameters explanation:
