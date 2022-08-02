@@ -1,3 +1,14 @@
+1. Cntrl + L : go to a line
+2. Cntrl + F -: find
+3. Cntrl + K -; go to next same word/line
+4. Cntrl + Shift + R -: open any file in the workspace
+5. Cntrl + Shift + T -: open class files
+6. Cntrl + H -: search a keyword in the entire workspace
+7. Cntrl + shift + G -: find references
+8. Cntrl + shift + up/down arrow -: navigate through outline
+9. Alt + left/right arrow -: go to last edited point
+
+
 **********Manage Files and Projects
 
 1) Ctrl+N        Create new project using the Wizard
