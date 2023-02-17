@@ -1,0 +1,8 @@
+//Like SVN Stash
+
+
+svn diff > stash.patch
+svn revert -R .
+After you’ve implemented your preparatory feature, you can then apply your patch with the patch utility:
+
+patch < stash.patch
