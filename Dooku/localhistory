@@ -1,0 +1,39 @@
+dmsoomro@KHILLDMSOOMRO:~/demo4/src/main$ history | grep dokku
+  662  wget https://raw.githubusercontent.com/dokku/dokku/v0.29.1/bootstrap.sh
+  666  wget https://raw.githubusercontent.com/dokku/dokku/v0.29.2/bootstrap.sh
+  684  docker pull dokku/dokku:0.29.3
+  691  docker container run   --env DOKKU_HOSTNAME=dokku.me   --env DOKKU_HOST_ROOT=/var/lib/dokku/home/dokku   --name dokku   --publish 3022:22   --publish 8083:80   --publish 8443:443   --volume /var/lib/dokku:/mnt/dokku   --volume /var/run/docker.sock:/var/run/docker.sock   dokku/dokku:0.29.3
+  692  docker exec -it dokku bash
+  695  dokku
+  697  docker container run   --env DOKKU_HOSTNAME=dokku.me   --env DOKKU_HOST_ROOT=/var/lib/dokku/home/dokku   --name dokku   --publish 3022:22   --publish 8083:80   --publish 8443:443   --volume /var/lib/dokku:/mnt/dokku   --volume /var/run/docker.sock:/var/run/docker.sock   dokku/dokku:0.29.3
+  701  docker container run   --env DOKKU_HOSTNAME=dokku.me   --env DOKKU_HOST_ROOT=/var/lib/dokku/home/dokku   --name dokku   --publish 3022:22   --publish 8083:80   --publish 8443:443   --volume /var/lib/dokku:/mnt/dokku   --volume /var/run/docker.sock:/var/run/docker.sock   dokku/dokku:0.29.3
+  704  docker run dokku
+  705  dokku
+  706  dokku1
+  708  docker exec -it dokku1 bash
+  709  docker container run   --env DOKKU_HOSTNAME=dokku.me   --env DOKKU_HOST_ROOT=/var/lib/dokku/home/dokku   --name dokku   --publish 3022:22   --publish 8083:80   --publish 8443:443   --volume /var/lib/dokku:/mnt/dokku   --volume /var/run/docker.sock:/var/run/docker.sock   dokku/dokku:0.29.3
+  710  docker container run   --env DOKKU_HOSTNAME=dokku.me   --env DOKKU_HOST_ROOT=/var/lib/dokku/home/dokku   --name dokku1   --publish 3022:22   --publish 8083:80   --publish 8443:443   --volume /var/lib/dokku:/mnt/dokku   --volume /var/run/docker.sock:/var/run/docker.sock   dokku/dokku:0.29.3
+  838  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add dkey 
+  841  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add dkey 
+  844  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add dkey 
+  845  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add dkey
+  846  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  855  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  856  cat ~/.ssh/known_hosts | ssh -i "/home/ubuntu/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  857  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  876  git remote add dokku dokku@65.0.177.55:dbrillo
+  878  git push dokku master
+  880  git push dokku master
+  882  git push dokku master
+  883  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add dkey
+  884  cat ~/.ssh/known_hosts | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Key.pem" ubuntu@ec2-65-0-177-55.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  891  git remote add dokku dokku@dokku.me:dbrillo
+  893  git push dokku main:master
+  921  cat ~/.ssh/id_rsa.pub | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Keys.pem" dokku@ec2-65-0-131-158.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  932  cd dokku/
+  937  cat ~/.ssh/id_rsa.pub | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Keys.pem" dokku@ec2-65-0-131-158.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  938  cat ~/.ssh/id_rsa.pub | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/dokku/id_rsa.pub" dokku@ec2-65-0-131-158.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  939  cat ~/.ssh/id_rsa.pub | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Keys.pem" admin@ec2-65-0-131-158.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  941  cat ~/.ssh/id_rsa.pub | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Keys.pem" admin@ec2-65-0-131-158.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin
+  942  cat ~/.ssh/id_rsa.pub | ssh -i "/home/dmsoomro/_AWS/PrivateKeys/DWS_Keys.pem" admin@ec2-65-0-131-158.ap-south-1.compute.amazonaws.com sudo dokku ssh-keys:add admin1
+ 1005  history | grep dokku
