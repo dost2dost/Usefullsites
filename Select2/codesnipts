@@ -1,0 +1,31 @@
+<select id="mySelect"></select>
+
+<script>
+$(document).ready(function() {
+  $('#mySelect').select2({
+    data: [
+      {id: 1, text: 'Option 1', group: 'Group 1'},
+      {id: 2, text: 'Option 2', group: 'Group 1'},
+      {id: 3, text: 'Option 3', group: 'Group 2'},
+      {id: 4, text: 'Option 4', group: 'Group 2'}
+    ],
+    templateResult: function(data) {
+      if (data.element) {
+        return $(data.element).html();
+      } else {
+        var $result = $('<span></span>');
+
+        $result.text(data.text);
+
+        if (data.group) {
+          $result.addClass('select2-results__group');
+          $result.attr('role', 'group');
+          $result.attr('aria-label', data.group);
+        }
+
+        return $result;
+      }
+    }
+  });
+});
+</script>
