@@ -1,0 +1,9 @@
+If the database you want to restore doesn't already exist, you need to create it first.
+
+On the command-line, if you're in the same directory that contains the dumped file, use these commands (with appropriate substitutions):
+
+C:\> mysql -u root -p
+
+mysql> create database mydb;
+mysql> use mydb;
+mysql> source db_backup.dump;
