@@ -1,0 +1,12 @@
+//https://www.youtube.com/watch?v=Ff9FXV7KXI4
+1 split the file into smaller file as per system memory 
+2 create a script to save csv int tables as beloow
+
+
+LOAD DATA INFILE '/path/to/employee_data.csv'
+INTO TABLE Employee
+FIELDS TERMINATED BY ','  -- Specify the delimiter (e.g., a comma)
+ENCLOSED BY '"'           -- Optional: if values are enclosed in quotes
+LINES TERMINATED BY '\n'  -- Specify the line terminator
+IGNORE 1 LINES            -- Skip the header row, if present
+(FIRST_Name, Last_Name, Role); -- Map columns to the file's data
